@@ -1,0 +1,162 @@
+<?php  
+/**
+ * xsos SOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+$sessao = &$direcaoXMdl->pegaSessao();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_br" lang="pt_br">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php
+      echo $SOS_LINGUA; 
+    ?>" />
+    <meta name="language" content="pt-br" />
+    
+    <meta name="description"  
+      content="Sistema de ordem de serviço" />
+      
+    <meta name="keywords"     
+      content="sistema de ordem de serviço" />
+      
+    <meta name="author" content="karx" />
+    
+    <link rel="StyleSheet" href="estrutura/modelo/xsos/enfeite/enfeite.css" 
+        type="text/css"/>
+        
+    <link rel="StyleSheet" href="estrutura/modelo/xsos/enfeite/artesao.css" 
+        type="text/css"/>
+        
+    <link rel="StyleSheet" href="estrutura/modelo/xsos/enfeite/menu.css" 
+        type="text/css"/>
+    
+    <title>SISTEMA DE GERENCIAMENTO DE O.S.</title>
+    
+    <script src="estrutura/externa/jquery/jquery.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery-utils/jquery.utils.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.strings.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.printElement.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.maskedinput.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.formatCurrency.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/format_currency/jquery.formatCurrency.pt-BR.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.parseXML.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/externa/jquery/jquery.form.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/xaman/ferramenta/Xaman.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/xaman/ferramenta/arte/ArtesaoXmn.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/xaman/ferramenta/arte/GravuraArteXmn.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/xaman/ferramenta/arte/JanelaArteXmn.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script src="estrutura/ferramenta/SosXmn.js"
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+      
+    <script type="text/javascript" charset="<?php echo $SOS_LINGUA;?>">
+      sosXmn.usuario['nome']  = '<?php echo @$sessao['usuario']; ?>';
+      sosXmn.usuario['grupo'] = '<?php echo @$sessao['permissao']; ?>';
+    </script>
+      
+    <script type="text/javascript" 
+      src="estrutura/ferramenta/MenuFlx.js"></script>
+      
+    <script src="estrutura/ritual.js" 
+      type="text/javascript"
+      charset="<?php echo $SOS_LINGUA;?>"></script>
+        
+    <link rel="shortcut icon" 
+      href="estrutura/modelo/xsos/imagem/xsos.ico" 
+      type="image/x-icon" />
+        
+</head>
+<body>
+<div id="divSessao" style="position:absolute;"></div>
+<div class="titulo">
+        <img src="<?php echo $SOS_MASCARA
+            . 'estrutura/modelo/xsos/imagem/';?>logo.png" 
+            align="middle" 
+            alt="xsos"/>
+</div>
+<div class="barra_menu">
+    <div id="area_menu" class="menu_direita" style="text-align:left;">
+        <font class="menu"><b>GERENCIAMENTO DE O.S.</b></font>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <?php include $SOS_MASCARA_REAL
+            . 'estrutura/modelo/xsos/menu/menu.phtml';?>
+        &nbsp;
+    </div>
+</div>
+<div class="area_aviso_moldura">
+    <div id="area_aviso" class="area_aviso">
+        <?php include_once $SOS_MASCARA_REAL
+            . 'estrutura/aviso.phtml';?>
+    </div>
+</div>
+<div class="area">
+  <div id="area_conteudo" class="area_conteudo">
+    <?php include_once $mascara_conteudo; ?>
+  </div>
+</div>
+</body>
+</html>

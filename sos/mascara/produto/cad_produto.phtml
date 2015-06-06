@@ -1,0 +1,238 @@
+<?php
+/*
+    XSOS - Sistema de Ordem de Serviço
+    Copyright (C) 2008  Ivan Ogassavara
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    e-mail: ivan.ogassavara@gmail.com
+*/
+	
+if (is_null($produtoBox)){
+	$produtoBox = new ProdutoBox();
+}
+
+if (is_null($localizacoeVctBox)){
+	$localizacoeVctBox = new LocalizacaoVctBox();
+
+}
+
+if (is_null($modeloVctBox)){
+	$modeloVctBox = new ModeloVctBox();
+}
+
+if (is_null($tipoProdutoVctBox)){
+	$tipoProdutoVctBox = new TipoProdutoVctBox();
+}
+
+if (is_null($fabricanteVctBox)){
+	$fabricanteVctBox = new FabricanteVctBox();
+}
+
+?>
+<form action="xaman.php" method="post">
+<input type="hidden" name="entidade" value="">
+<input type="hidden" name="pedido" value="">
+<input type="hidden" name="identificador" value="<?if($produtoBox->getId()>0) echo $produtoBox->getId();?>">
+<script>
+	function gravar(){
+		document.forms[0].entidade.value="produto";
+		document.forms[0].pedido.value="gravar";
+		document.forms[0].submit();
+	}
+	
+	function cancelar(){
+		if(confirm('Deseja cancelar a opera��o?') == 1) {
+			document.forms[0].entidade.value="produto";
+			document.forms[0].pedido.value="index";
+			document.forms[0].submit();
+		}
+	}
+</script>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="body" valign="top">
+		<b>Cadastro de Produtos</b>
+	</td>
+	</tr>
+	<tr>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+			<tr>
+				<td>
+					<font class="text">Tipo Produto: </font>
+				</td>
+				<td>
+					<select name="tipoProduto">
+<?
+					while ($tipoProdutoVctBox->getEOF()==false){
+						echo "\t\t\t\t\t\t";
+						echo "<option value='".$tipoProdutoVctBox->getBox()->getId()."'";
+						if ($tipoProdutoVctBox->getBox()->getId()==$produtoBox->getTipoProdutoBox()->getId())
+								echo " selected";
+						echo ">";
+						echo $tipoProdutoVctBox->getBox()->getNome();
+						echo "</option>\n";
+						$tipoProdutoVctBox->moveNext();
+					}
+?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Descrição: </font>
+				</td>
+				<td>
+					<input type="text" name="descricao" maxlength=30 style="width:300px;" value="<?if($produtoBox->getDescricao()!="") echo $produtoBox->getDescricao();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Fabricante: </font>
+				</td>
+				<td>
+					<select name="fabricante">
+<?
+					while ($fabricanteVctBox->getEOF()==false){
+						echo "\t\t\t\t\t\t";
+						echo "<option value='".$fabricanteVctBox->getBox()->getId()."'";
+						if ($fabricanteVctBox->getBox()->getId()==$produtoBox->getFabricanteBox()->getId())
+								echo " selected";
+						echo ">";
+						echo $fabricanteVctBox->getBox()->getNome();
+						echo "</option>\n";
+						$fabricanteVctBox->moveNext();
+					}
+?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Código de Barra: </font>
+				</td>
+				<td>
+					<input type="text" name="codigobarra" maxlength=13 value="<?if($produtoBox->getCodigoBarra()!="") echo $produtoBox->getCodigoBarra();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Qtde.: </font>
+				</td>
+				<td>
+<?
+				if(!$produtoBox->getId()>0){
+?>
+					<input type="text" name="qtde" maxlength=4 value="<?if($produtoBox->getQtde()!="") echo $produtoBox->getQtde();?>">
+<?
+				}else{
+					echo "<font class='text'>".$produtoBox->getQtde()."</font>";
+					echo "<input type='hidden' name='qtde' value='".$produtoBox->getQtde()."'>";
+				}
+?>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Qtde. Min.: </font>
+				</td>
+				<td>
+					<input type="text" name="qtdemin" maxlength=4 value="<?if($produtoBox->getQtdeMin()!="") echo $produtoBox->getQtdeMin();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Valor: </font>
+				</td>
+				<td>
+					<input type="text" name="valor" maxlength=7 value="<?if($produtoBox->getValor()!="") echo $produtoBox->getValor();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Modelos: </font>
+				</td>
+				<td>
+					<select name="modelos[]" multiple="multiple" size="4">
+<?
+					while ($modeloVctBox->getEOF()==false){
+						echo "\t\t\t\t\t\t";
+						echo "<option value='".$modeloVctBox->getBox()->getId()."'";
+						
+						if (!is_null($modelosprodutoBox)){
+							$modelosprodutoBox->primeiroBox();
+							while ($modelosprodutoBox->getEOF()==false){
+								if ($modeloVctBox->getBox()->getId()==$modelosprodutoBox->getBox()->getId())
+									echo " selected";
+									$_teste.=$modelosprodutoBox->getBox()->getId().",";
+								$modelosprodutoBox->moveNext();
+							}
+						}
+						echo ">";
+						echo $modeloVctBox->getBox()->getMarcaBox()->getNome();
+						echo " -- ";
+						echo $modeloVctBox->getBox()->getNome();
+						echo "</option>\n";
+						$modeloVctBox->moveNext();
+					}
+?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Localização: </font>
+				</td>
+				<td>
+					<select name="localizacoes[]" multiple="multiple">
+<?
+				
+					while ($localizacoeVctBox->getEOF()==false){
+						echo "\t\t\t\t\t\t";
+						echo "<option value='".$localizacoeVctBox->getBox()->getId()."'";
+						if (!is_null($produtoBox->getLocalizacoeVctBox()->getBox()))
+							if ($localizacoeVctBox->getBox()->getId()==$produtoBox->getLocalizacoeVctBox()->getBox()->getId())
+								echo " selected";
+						echo ">";
+						echo $localizacoeVctBox->getBox()->getNome();
+						echo "</option>\n";
+						$localizacoeVctBox->moveNext();
+					}
+?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 align="center">
+					<input type="button" value="Gravar" onClick="javascript:gravar();">
+					<input type="button" value="Cancelar" onClick="javascript:cancelar();">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</form>
+<hr />

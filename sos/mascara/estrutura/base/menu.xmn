@@ -1,0 +1,47 @@
+<lista_menu>
+  <menu nome="os" 
+    descricao="OS"
+    chamada="entidade=os&amp;pedido=listar&amp;xml=false" 
+    grupos="admin;publico"/>
+    
+  <menu nome="cliente" 
+    descricao="Cliente" 
+    chamada="entidade=cliente&amp;pedido=listar&amp;xml=false"
+    grupos="admin;publico"/>
+    
+  <menu nome="modelo" 
+    descricao="Modelo" 
+    chamada="entidade=modelo&amp;pedido=listar&amp;xml=false"
+    grupos="admin;publico"/>
+    
+  <menu nome="marca" 
+    descricao="Marca" 
+    chamada="entidade=marca&amp;pedido=listar&amp;xml=false"
+    grupos="admin;publico"/>
+    
+  <menu nome="operadora" 
+    descricao="Operadora"
+    chamada="entidade=operadora&amp;pedido=listar&amp;xml=false" 
+    grupos="admin;publico"/>
+    
+  <menu nome="atendente" 
+    descricao="Atendente" 
+    chamada="entidade=atendente&amp;pedido=listar&amp;xml=false"
+    grupos="admin;publico"/>
+    
+  <menu nome="estado_os" 
+    descricao="Andamento de O.S." 
+    chamada="entidade=estado_os&amp;pedido=listar&amp;xml=false"
+    grupos="admin"/>
+    
+  <menu nome="relatorio" 
+    descricao="Relatorio" 
+    chamada="entidade=relatorio&amp;pedido=listar&amp;xml=false"
+    grupos="admin"/>
+    
+  <menu nome="fechar" 
+    descricao="Fechar" 
+    chamada="entidade=sos&amp;pedido=encerrar"
+    grupos="admin;publico"/>
+    
+</lista_menu>

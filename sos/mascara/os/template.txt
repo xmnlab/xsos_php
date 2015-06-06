@@ -1,0 +1,97 @@
+PLAZA FONE - Shopping Plaza Sul
+Praça Leonor Kaupa, 100 - G1-B1
+Fone 11 5073-3211
+
+Protocolo de Entrega - O.S.: {{ os_numero }}
+Dt. Abertura: {{ dt_abertura }}
+Dt. Prevista de Entrega: {{ dt_entrega_prev }}
+Estado: {{ os_estado }}
+
+Atendente: {{ atend_nome }}
+
+Cliente: {{ cli_nome }}
+  C.P.F.: {{ cli_cpf }}
+
+Aparelho
+  No. Hexadecimal: {{ ap_hexa }}
+  No. da Linha: {{ ap_linha_numero }}
+  Modelo: {{ ap_modelo }}
+  Marca: {{ ap_marca }}
+  Operadora: {{ ap_operadora }}
+  Plano da Linha: {{ ap_linha_plano }}
+
+OBSERVAÇÕES DO CLIENTE:
+{{ cli_obs }}
+
+DESCRIÇÃO SERVIÇO:
+{{ serv_descricao }}
+
+VALOR DO SERVIÇO: {{ serv_valor }}
+
+É INDISPENSÁVEL A APRESENTAÇÃO DESTE
+DOCUMENTO PARA A RETIRADA DO APARELHO.
+A PLAZA FONE GARANTE SOMENTE O REPARO
+EFETUADO PELO PRAZO DE 90 DIAS.
+EM HIPÓTESE ALGUMA, O PRAZO DE GARANTIA
+SERÁ EXTENDIDO EM FUNÇÃO DE UM NOVO REPARO.
+A PLAZA FONE NÃO SE RESPONSABILIZA PELOS A
+PARELHOS NÃO RETIRADOS NUM PRAZO DE 3 MESES.
+O ORÇAMENTO SERÁ EFETUADO GRATUITAMENTO
+DENTRO DE UM PRAZO ESTABELECIDO NO ATO DA
+RECEPÇÃO.
+
+
+------------------------------------------------
+Assinatura do Atendente 
+
+
+------------------------------------------------
+
+Plaza Fone - O.S.: {{ os_numero }}
+Dt. Abertura: {{ dt_abertura }}
+Dt. Prevista de Entrega: {{ dt_entrega_prev }}
+Estado: {{ os_estado }}
+
+Atendente: {{ atend_nome }}
+
+Cliente: {{ cli_nome }}
+  C.P.F.: {{ cli_cpf }}
+  Telefone: {{ cli_telefone }}
+  E-mail: {{ cli_email }}
+
+Aparelho
+  No. Hexadecimal: {{ ap_hexa }}
+  No. da Linha: {{ ap_linha_numero }}
+  Modelo: {{ ap_modelo }}
+  Marca: {{ ap_marca }}
+  Operadora: {{ ap_operadora }}
+  Plano da Linha: {{ ap_linha_plano }}
+
+ESTADO DO APARELHO:
+{{ ap_estado }}
+
+OBSERVAÇÕES DO CLIENTE:
+{{ cli_obs }} 
+
+OBSERVAÇÕES TÉCNICAS:
+{{ tec_obs }}
+
+VALOR DO SERVIÇO: {{ serv_valor }}
+
+É INDISPENSÁVEL A APRESENTAÇÃO DO PROTOCOLO
+DA ORDEM DE SERVIÇO PARA A RETIRADA DO APARELHO.
+A PLAZA FONE GARANTE SOMENTE O REPARO EFETUADO
+PELO PRAZO DE 90 DIAS. EM HIPÓTESE ALGUMA, O
+PRAZO DE GARANTIA SERÁ EXTENDIDO EM FUNÇÃO DE UM
+NOVO REPARO. A PLAZA FONE NÃO SE RESPONSABILIZA
+PELOS APARELHOS NÃO RETIRADOS NUM PRAZO DE 3
+MESES. O ORÇAMENTO SERÁ EFETUADO GRATUITAMENTO
+DENTRO DE UM PRAZO ESTABELECIDO NO ATO DA
+RECEPÇÃO.
+
+
+------------------------------------------------
+Ass. Cliente, ciente do termo que consta no
+protocolo.
+
+------------------------------------------------

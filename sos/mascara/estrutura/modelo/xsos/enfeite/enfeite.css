@@ -1,0 +1,315 @@
+/**
+ * Xaman - Estrutura de Desenvolvimento
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   xaman
+ * @package    xaman
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+ 
+/*
+ * SUGESTAO DE CORES
+ * VERMELHO:    #931b1b;
+ * VERDE:       #8aaf43;
+ * AZUL:        #0074a3;
+ * AZUL:        #002255;
+ */
+
+body
+{
+    margin:         0px;
+    background:     #efefef;
+}
+
+input[type="button"].desabilitado
+{
+    background:     inherit;
+}
+
+input[type="button"], input[type="submit"]
+{
+    color:     #ffffff;
+    background: #afafaf;
+    font-weight: bold;
+}
+
+input, textarea, select
+{
+    border:     1px #afafaf solid;
+    font-size:  11px;
+}
+
+a
+{
+    font-size:          12px;
+    color:              #444444;
+    text-decoration:    none;
+    font-family:        Verdana, Arial, Helvetica, sans-serif;
+}
+
+a.menu
+{
+    font-size:          10px;
+    color:              #ffffff;
+    text-decoration:    none;
+    font-family:        Verdana, Arial, Helvetica, sans-serif;
+}
+
+h1, h2
+{
+    font-family:    Verdana, Arial, Helvetica, sans-serif;
+}
+
+div.area
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+    margin:         7px;
+    padding-top:    4px;
+    height:         380px;
+    overflow:       auto;
+}
+
+div.area_conteudo
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+    height-min:     380px;
+    margin:         7px;
+}
+
+div.area_aviso_moldura
+{
+    background:     #fafafa;
+    height:         20px;
+    margin:         5px 7px 5px 7px;
+    padding:        5px 2px 0px 0px;
+}
+
+div.area_aviso
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #555555;
+    width:          750px;
+    text-align:     left;
+    font-weight:    bold;
+    padding-left:   7px;
+}
+
+div.barra_lateral
+{
+    float:          left;
+    width:          150px;
+    position:       fixed;
+    background:     #dfdfdf;
+    z-index:        3;
+    top:            0px;
+}
+
+div.titulo
+{
+    font-size:      12px;
+    font-weight:    bold;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #ffffff;
+    background:     #002255;
+    border-bottom:  2px #fafafa solid;
+    padding:        4px;
+}
+div.barra_menu {
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    padding:         2px;
+}
+
+div.cabecalho
+{
+    background:     #dfdfdf;
+    height:         100px;
+    position:       fixed;
+    width:          100%;
+}
+
+div.cabecalho_linha
+{
+    width:          60%;
+    left:           25%;
+    position:       fixed;
+    top:            100px;
+}
+div.menu_esquerda {
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    text-align:     left;
+    float:          left;
+}
+
+div.menu_direita
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    text-align:     right;
+}
+
+div.peh {
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+}
+
+div.camadaMenu
+{
+    width:          100px;
+    left:           0;
+    z-order:        100;
+    margin-top:     10px;
+    margin-left:    10px;
+    padding:        2px;
+    top:            0px;
+}
+
+div.conteudo
+{
+    float:          left;
+}
+
+spam.titulo, font.titulo, p.titulo {
+    font-size:      20px;
+    font-weight:    bold;
+    font-family:    verdana, Helvetica, sans-serif;
+}
+
+.subtitulo 
+{
+  font-size:        13px;
+  font-weight:      bold;
+  font-family:      Arial, Helvetica, sans-serif;
+}
+
+.subTitulo 
+{
+  font-size:        13px;
+  font-weight:      bold;
+  font-family:      Arial, Helvetica, sans-serif;
+}
+
+img
+{
+    border:             0px #ffffff solid;
+}
+
+p.apresentacao
+{
+    font-family:        sans-serif, Verdana, Arial, Helvetica;
+    font-size:          18px;
+    color:              #888888;
+    text-align:         justify;
+    
+}
+
+.descricao
+{
+    font-size:    11px;
+    font-style:   italic;
+    color:        #777777;
+    font-family:  Verdana, Arial, Helvetica, sans-serif;
+}
+
+.texto
+{
+    font-size:    11px;
+    color:        #333333;
+    font-family:  Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+td
+{
+    font-size:    11px;
+    font-family:  Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+th
+{
+    font-size:    11px;
+    font-family:  Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+.textoImpressao
+{
+    font-size:    10px;
+    color:        #000000;
+    font-family:  Courier New, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.fundoclaro
+{
+    background-color:#DEDEDE;
+}
+
+
+hr
+{
+    border: 2px #DEDEDE solid;
+}
+.lembrete
+{
+    text-align:     left;
+    font-family:    verdana;
+    font-size:      10px;
+    color:          #555555;
+    font-weight:    bold;
+    position:       relative;
+    width:          100%;
+}
+
+.titulo
+{
+    font-family:    verdana;
+    font-size:      22px;
+    color:          #fafafa;
+    font-weight:    bold;
+}
+
+.lista
+{
+    width:      980px;
+    height:     250px;
+    overflow:   auto;
+}
+
+div.caixaBasica
+{
+}
+
+.formulario div
+{
+  padding-bottom:      2px;
+  padding-top:      2px;
+}

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class AtendentePrst</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class AtendentePrst</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">XSOS - Sistema de gestão Ordem de Serviço  Copyright (C) 2008  Ivan Ogassavara</p>
+<p class="description"><p>This program is free software: you can redistribute it and/or modify  it under the terms of the GNU General Public License as published by  the Free Software Foundation, either version 3 of the License, or  (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License for more details.</p><p>You should have received a copy of the GNU General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Ivan Ogassavara &lt;<a href="mailto:ivan.ogassavara@gmail.com">ivan.ogassavara@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> Release: @package_version@</li>
+				<li><span class="field">copyright:</span> Copyright (C) 2008  Ivan Ogassavara</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_persistencia---AtendentePrst.php.html">/persistencia/AtendentePrst.php</a> (line <span class="field">30</span>)
+		</p>
+		
+				
+		<pre>PersistenciaXmn
+   |
+   --<a href="../../sos/sos-persistencia/SosPrst.html">SosPrst</a>
+      |
+      --AtendentePrst</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#EXCLUSAO_ATENDENTE_CODIGO" title="details" class="const-name">EXCLUSAO_ATENDENTE_CODIGO</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GRAVACAO_ATENDENTE" title="details" class="const-name">GRAVACAO_ATENDENTE</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES" title="details" class="const-name">PESQUISA_ATENDENTES</a> = 					<span class="var-type"> 100</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES_LOGIN_APROXIMADO" title="details" class="const-name">PESQUISA_ATENDENTES_LOGIN_APROXIMADO</a> = 					<span class="var-type"> 102</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES_NOME" title="details" class="const-name">PESQUISA_ATENDENTES_NOME</a> = 					<span class="var-type"> 104</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES_NOME_APROXIMADO" title="details" class="const-name">PESQUISA_ATENDENTES_NOME_APROXIMADO</a> = 					<span class="var-type"> 101</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES_NOME_CODIGO_DIFERENTE" title="details" class="const-name">PESQUISA_ATENDENTES_NOME_CODIGO_DIFERENTE</a> = 					<span class="var-type"> 105</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTES_NOME_LISTA" title="details" class="const-name">PESQUISA_ATENDENTES_NOME_LISTA</a> = 					<span class="var-type"> 103</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTE_CODIGO" title="details" class="const-name">PESQUISA_ATENDENTE_CODIGO</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_ATENDENTE_LOGIN" title="details" class="const-name">PESQUISA_ATENDENTE_LOGIN</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+										
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#armazenaModelo" title="details" class="method-name">armazenaModelo</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGravacao</span> = <span class="var-default">null</span>])
+									</div>
+																						
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#inicia" title="details" class="method-name">inicia</a>
+										()
+									</div>
+																														
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#preparaPersistencia" title="details" class="method-name">preparaPersistencia</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#removeModelo" title="details" class="method-name">removeModelo</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoExclusao</span> = <span class="var-default">self::EXCLUSAO_ATENDENTE_CODIGO</span>])
+									</div>
+																										
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#carregaModelo" title="details" class="method-name">carregaModelo</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$registro</span>)
+									</div>
+																						
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaListaModelo" title="details" class="method-name">pegaListaModelo</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteLstMdl.html">AtendenteLstMdl</a></span>&nbsp;<span class="var-name">$atendenteLstMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoPesquisa</span> = <span class="var-default">self::PESQUISA_ATENDENTES</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaModelo" title="details" class="method-name">pegaModelo</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoPesquisa</span> = <span class="var-default">self::PESQUISA_ATENDENTE_CODIGO</span>])
+									</div>
+																											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodarmazenaModelo" id="armazenaModelo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static armazenaModelo</span> (line <span class="line-number">215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			armazenaModelo
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGravacao</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>
+				<span class="var-name">$atendenteMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoGravacao</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinicia" id="inicia"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static inicia</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			inicia
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../sos/sos-persistencia/SosPrst.html#methodinicia">SosPrst::inicia()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodpreparaPersistencia" id="preparaPersistencia"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static preparaPersistencia</span> (line <span class="line-number">55</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			preparaPersistencia
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodremoveModelo" id="removeModelo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static removeModelo</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			removeModelo
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoExclusao</span> = <span class="var-default">self::EXCLUSAO_ATENDENTE_CODIGO</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>
+				<span class="var-name">$atendenteMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoExclusao</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcarregaModelo" id="carregaModelo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">carregaModelo</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			carregaModelo
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$registro</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>
+				<span class="var-name">$atendenteMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$registro</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpegaListaModelo" id="pegaListaModelo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaListaModelo</span> (line <span class="line-number">142</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaListaModelo
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteLstMdl.html">AtendenteLstMdl</a></span>&nbsp;<span class="var-name">$atendenteLstMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoPesquisa</span> = <span class="var-default">self::PESQUISA_ATENDENTES</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/AtendenteLstMdl.html">AtendenteLstMdl</a></span>
+				<span class="var-name">$atendenteLstMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoPesquisa</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpegaModelo" id="pegaModelo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaModelo</span> (line <span class="line-number">112</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaModelo
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>&nbsp;<span class="var-name">$atendenteMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoPesquisa</span> = <span class="var-default">self::PESQUISA_ATENDENTE_CODIGO</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/AtendenteMdl.html">AtendenteMdl</a></span>
+				<span class="var-name">$atendenteMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoPesquisa</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../sos/sos-persistencia/SosPrst.html">SosPrst</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../sos/sos-persistencia/SosPrst.html#methodinicia">SosPrst::inicia()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constEXCLUSAO_ATENDENTE_CODIGO" id="EXCLUSAO_ATENDENTE_CODIGO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXCLUSAO_ATENDENTE_CODIGO</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGRAVACAO_ATENDENTE" id="GRAVACAO_ATENDENTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GRAVACAO_ATENDENTE</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES" id="PESQUISA_ATENDENTES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES</span>
+			 = <span class="const-default"> 100</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES_LOGIN_APROXIMADO" id="PESQUISA_ATENDENTES_LOGIN_APROXIMADO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES_LOGIN_APROXIMADO</span>
+			 = <span class="const-default"> 102</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES_NOME" id="PESQUISA_ATENDENTES_NOME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES_NOME</span>
+			 = <span class="const-default"> 104</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES_NOME_APROXIMADO" id="PESQUISA_ATENDENTES_NOME_APROXIMADO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES_NOME_APROXIMADO</span>
+			 = <span class="const-default"> 101</span>
+			(line <span class="line-number">41</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES_NOME_CODIGO_DIFERENTE" id="PESQUISA_ATENDENTES_NOME_CODIGO_DIFERENTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES_NOME_CODIGO_DIFERENTE</span>
+			 = <span class="const-default"> 105</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTES_NOME_LISTA" id="PESQUISA_ATENDENTES_NOME_LISTA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTES_NOME_LISTA</span>
+			 = <span class="const-default"> 103</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTE_CODIGO" id="PESQUISA_ATENDENTE_CODIGO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTE_CODIGO</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_ATENDENTE_LOGIN" id="PESQUISA_ATENDENTE_LOGIN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_ATENDENTE_LOGIN</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">37</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 20 Feb 2009 02:30:49 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

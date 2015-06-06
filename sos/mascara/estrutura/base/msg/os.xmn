@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DA MARCA" 
+    objeto="nome" />
+    
+  <mensagem id="HEXADECIMAL_NAO_INFORMADO" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O HEXADECIMAL DO APARELHO" 
+    objeto="nome" />
+  
+  <mensagem id="LINHA_DO_APARELHO_NAO_INFORMADO" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O N&amp;Uacute;MERO DA LINHA DO APARELHO" 
+    objeto="nome" />
+    
+  <mensagem id="OBS_CLIENTE_NAO_INFORMADO" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME A OBSERVA&amp;Ccedil;&amp;Atilde;O DO CLIENTE" 
+    objeto="nome" />
+    
+</lista_mensagem>

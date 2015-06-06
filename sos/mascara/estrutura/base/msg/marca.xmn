@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DA MARCA" 
+    objeto="nome" />
+</lista_mensagem>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DO CLIENTE" 
+    objeto="nome" />
+    
+  <mensagem id="INFORME_ENDERECO" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O ENDERE&amp;Ccedil;O DO CLIENTE" 
+    objeto="endereco" />
+</lista_mensagem>

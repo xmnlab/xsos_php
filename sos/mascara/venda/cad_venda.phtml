@@ -1,0 +1,150 @@
+<?
+session_start();
+include_once "../properties.php";
+include_once $PATH.$CLASSE.$PROJETO."helper/SosHelper.php";
+
+if (isset($_SESSION["helper"]) || $_SESSION["helper"]!="")
+	$helper = unserialize($_SESSION["helper"]);
+else
+	$helper = new SosHelper();
+	
+$produtobox = $helper->getProdutoBox();
+if (is_null($produtobox))
+	$produtobox = new ProdutoBox();
+	
+$localizacoesbox = $helper->getLocalizacoesBox();
+if (is_null($localizacoesbox))
+	$localizacoesbox = new VextorBox();
+	
+include_once "../cabecalho.php";
+?>
+<form action="main.php" method="post">
+<input type="hidden" name="controller" value="">
+<input type="hidden" name="subController" value="">
+<input type="hidden" name="identificador" value="<?if($produtobox->getId()>0) echo $produtobox->getId();?>">
+<script>
+	function gravar(){
+		document.forms[0].controller.value="produto";
+		document.forms[0].subController.value="gravar";
+		document.forms[0].submit();
+	}
+	
+	function cancelar(){
+		if(confirm('Deseja cancelar a opera��o?') == 1) {
+			document.forms[0].controller.value="produto";
+			document.forms[0].subController.value="index";
+			document.forms[0].submit();
+		}
+	}
+</script>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="body" valign="top">
+		<b>Cadastro de Produtos</b>
+	</td>
+	</tr>
+	<tr>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+			<tr>
+				<td>
+					<font class="text">Nome: </font>
+				</td>
+				<td>
+<?
+				if(!$produtobox->getId()>0){
+?>
+					<input type="text" name="nome" maxlength=15 style="width:300px;" value="<?if($produtobox->getNome()!="") echo $produtobox->getNome();?>">
+<?
+				}else{
+					echo "<font class='text'>".$produtobox->getNome()."</font>";
+					echo "<input type='hidden' name='nome' value='".$produtobox->getNome()."'>";
+				}
+?>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Compatibilidade: </font>
+				</td>
+				<td>
+					<input type="text" name="compatibilidade" maxlength=60 value="<?if($produtobox->getCompatibilidade()!="") echo $produtobox->getCompatibilidade();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Qtde.: </font>
+				</td>
+				<td>
+<?
+				if(!$produtobox->getId()>0){
+?>
+					<input type="text" name="qtde" maxlength=4 value="<?if($produtobox->getQtde()!="") echo $produtobox->getQtde();?>">
+<?
+				}else{
+					echo "<font class='text'>".$produtobox->getQtde()."</font>";
+					echo "<input type='hidden' name='qtde' value='".$produtobox->getQtde()."'>";
+				}
+?>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Qtde. Min.: </font>
+				</td>
+				<td>
+					<input type="text" name="qtdemin" maxlength=4 value="<?if($produtobox->getQtdeMin()!="") echo $produtobox->getQtdeMin();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Valor: </font>
+				</td>
+				<td>
+					<input type="text" name="valor" maxlength=7 value="<?if($produtobox->getValor()!="") echo $produtobox->getValor();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<font class="text">Localiza��o: </font>
+				</td>
+				<td>
+					<select name="localizacao">
+<?
+					while ($localizacoesbox->getEOF()==false){
+						echo "<option value='".$localizacoesbox->getBox()->getId()."'";
+						if ($localizacoesbox->getBox()->getId()==$produtobox->getLocalizacaoBox()->getId())
+							echo " selected";
+						echo ">";
+						echo $localizacoesbox->getBox()->getNome();
+						echo "</option>";
+						$localizacoesbox->moveNext();
+					}
+?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 align="center">
+					<input type="button" value="Gravar" onClick="javascript:gravar();">
+					<input type="button" value="Cancelar" onClick="javascript:cancelar();">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</form>
+<?
+include_once "../rodape.php";
+?>

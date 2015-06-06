@@ -1,0 +1,59 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+$requisicao = &$direcaoXMdl->pegaRequisicao();
+?>
+<script type="text/javascript"
+  src="estrutura/ferramenta/RelatorioFlx.js" 
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<div class="subTitulo">
+  <span id="relNome">Carga de Relat&oacute;rio</span>
+  <br />&nbsp;
+</div>
+<div id="relatorio">
+  <form
+    id="frmSos"
+    name="frmSos"
+    action="sos.php"
+    method="POST"
+    enctype="multipart/form-data">
+    
+  <input type="hidden" name="entidade" value="relatorio" />
+  <input type="hidden" name="pedido"   value="carga_armazenar" />
+  Selecione o arquivo de relat&oacute;rio a ser carregado: 
+  <br />
+  <input type="file" name="relatorio" />
+  <br />
+  <br />
+  <input type="button" value="carregar" 
+    onclick="relatorioFlx.carrega('carga', 'armazenar');" />
+    
+  <input type="button" value="voltar"
+    onclick="relatorioFlx.carrega('relatorio', 'listar');" />
+  </form>
+</div>

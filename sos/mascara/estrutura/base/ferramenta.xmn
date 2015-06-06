@@ -1,0 +1,32 @@
+<lista_ferramenta>
+  <ferramenta nome="altera" 
+    titulo="altera"
+    gravura="estrutura/modelo/xsos/imagem/alterar.png" 
+    borda="0"
+    espaco="3" />
+    
+  <ferramenta nome="imprime" 
+    titulo="imprime"
+    gravura="estrutura/modelo/xsos/imagem/imprime.png" 
+    borda="0"
+    espaco="3" />
+  
+  <ferramenta nome="remove" 
+    titulo="remove"
+    gravura="estrutura/modelo/xsos/imagem/lixinho.png" 
+    borda="0"
+    espaco="3" />
+  
+  <ferramenta nome="visualiza" 
+    titulo="visualiza"
+    gravura="estrutura/modelo/xsos/imagem/visualiza.png" 
+    borda="0"
+    espaco="3" />
+    
+  <ferramenta nome="nova_os" 
+    titulo="nova_os"
+    gravura="estrutura/modelo/xsos/imagem/mais.png" 
+    borda="0"
+    espaco="3" />
+    
+</lista_ferramenta>

@@ -1,0 +1,204 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA
+        . 'estrutura/enfeite/cliente.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/ClienteFlx.js" 
+  type="text/javascript"
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<form
+    name="frmSos"
+    id="frmSos"
+    action="javascript:clienteFlx.armazena();" 
+    method="post">
+
+<input type='hidden' name='entidade' value='cliente'>
+<input type='hidden' name='pedido' value='armazenar'>
+<input type='hidden' name='identificador' value='<?php echo $clienteMdl->pegaId();?>'>
+
+<table cellspacing='0' cellpadding='0' border='0'>
+<tr>
+    <td class='body' valign='top'>
+        <table width='100%' cellspacing='0' cellpadding='0' border='0'>
+        <tr>
+            <td class='subTitulo' colspan='2'>
+                Cadastro de Clientes
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="float:left;width:600px;" class="formulario">
+              <div style="float:left;width:600px;">
+                <div style="float:left;width:400px;">
+                  <font class='texto'>Nome: </font>
+                  <br />
+                  <input type='text' name='nome' maxlength=60 
+                    style='width:300px;' 
+                    value='<?php echo $clienteMdl->pegaNome();?>' />
+                </div>
+              </div>
+              <div style="float:left;width:600px;">
+                <div style="float:left;width:100px;">
+                  <font class='texto'>Endere&ccedil;o: </font>
+                  <input type='text' name='endereco' maxlength=60 
+                    style='width:300px;' 
+                    value='<?php 
+                        echo $clienteMdl->pegaEnderecoXMdl()->
+                        pegaLogradouro();?>' />
+                </div>
+              </div>
+              <div style="float:left;width:600px;">
+                  <div style="float:left;width:170px;">
+                    <font class='texto'>Bairro: </font>
+                    <br />
+                    <input type='text' name='bairro' maxlength=25 
+                        value='<?php echo $clienteMdl->pegaEnderecoXMdl()->
+                            pegaBairroXMdl()->pegaNome();?>' />
+                  </div>
+                  <div style="float:left;width:170px;">
+                    <font class='texto'>Cidade: </font>
+                    <br />
+                    <input type='text' name='cidade' 
+                      maxlength=30 
+                      value='<?php echo $clienteMdl->pegaEnderecoXMdl()->
+                        pegaBairroXMdl()->pegaCidadeXMdl()->pegaNome();?>' />
+                  </div>
+                  <div style="float:left;width:35px;">
+                    <font class='texto'>U.F.: </font>
+                    <br />
+                    <input type='text' name='uf' maxlength=2 
+                      size='2' 
+                      value='<?php echo $clienteMdl->pegaEnderecoXMdl()->
+                        pegaBairroXMdl()->pegaCidadeXMdl()->
+                        pegaUfXMdl()->pegaSigla();?>' />
+                  </div>
+                  <div style="float:left;width:170px;">
+                    <font class='texto'>C.E.P.: </font>
+                    <br />
+                    <input type='text' name='cep' size="10"
+                      value='<?php echo $clienteMdl->pegaEnderecoXMdl()->pegaCep();?>' />
+                  </div>
+              </div>
+              <div style="float:left;width:600px;">
+                  <div style="float:left;width:170px;">
+                    <font class='texto'>Telefone 1: </font>
+                    <br />
+                    <input type='text' name='fone1' maxlength=15 
+                      value='<?php echo $clienteMdl->pegaFone1();?>' />
+                  </div>
+                  <div style="float:left;width:170px;">
+                      <font class='texto'>Telefone 2: </font>
+                      <br />
+                      <input type='text' name='fone2' maxlength=15 
+                        value='<?php echo $clienteMdl->pegaFone2();?>' />
+                  </div>
+                </div>
+                
+                <div style="float:left;width:500px;background:#f5f5f5;margin-bottom:10px;">
+                  <div style="float:left;width:280px;">
+                    <div style="float:left;width:30px;">
+                      <input type='radio' name='optioncpf' 
+                        value='true' 
+<?php
+                        if($clienteMdl->pegaCnpj() == '') {
+                            echo 'checked="checked"';
+                        }
+?> 
+                        onclick='javascript:clienteFlx.atualizaRadio();' />
+                    </div>
+                    <div style="float:left;width:240px;">
+                      <div style="float:left;width:135px;">
+                        <font class='texto'>C.P.F.: </font>
+                        <br />
+                        <input type="text" name="cpf" 
+                          size="14" 
+                          value='<?php echo $clienteMdl->pegaCpf();?>'>
+                      </div>
+                      <div style="float:left;width:100px;border-right:5px solid #ffffff;">
+                        <font class='texto'>R.G.: </font>
+                        <br />
+                        <input type="text" name="rg" 
+                          size="10"
+                          value='<?php echo $clienteMdl->pegaRg();?>'>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="float:left;width:200px;">
+                    <div style="float:left;width:30px;">
+                      <input type='radio' name='optioncpf' 
+                        value='false' 
+<?php
+                        if($clienteMdl->pegaCnpj()!='') 
+                            echo 'checked';
+?> 
+                        onclick='javascript:clienteFlx.atualizaRadio();' />
+                    </div>
+                    <div style="float:left;width:100px;">
+                      <font class='texto'>C.N.P.J.: </font>
+                      <br />
+                      <input type='text' name='cnpj' 
+                        value='<?php echo $clienteMdl->pegaCnpj();?>' />
+                    </div>
+                </div>
+              </div>
+              <div style="float:left;width:600px;">
+                  <input type='button' value='Gravar e Abrir Nova O.S.' 
+                    onclick="javascript:clienteFlx.armazenaAbreNovaOs();" />
+                  <input type='button' value='Gravar' 
+                    onclick="javascript:clienteFlx.armazena();" />
+                  <input type='button' value='Cancelar' 
+                    onclick="javascript:clienteFlx.cancela();" />
+              
+              </div>
+            </div>
+          </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</form>
+<script>
+$(document).ready(function () {
+    clienteFlx.atualizaRadio();
+    document.frmSos.nome.focus();
+
+    $('input[name="cep"]' ).mask('99999-999');
+    $('input[name="cnpj"]').mask('99.999.999/9999-99');
+    $('input[name="cpf"]' ).mask('999.999.999-99');
+});
+</script>

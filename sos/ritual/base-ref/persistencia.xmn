@@ -1,0 +1,11 @@
+<persistencia>
+  <conexao 
+    nome="xsos"
+    sgbd="MySQL"
+    servidor="localhost"
+    usuario="USUARIO"
+    senha="SENHA"
+    banco="xsos"
+    lingua="latin-1"
+    metodo_conexao="persistente" />
+</persistencia>

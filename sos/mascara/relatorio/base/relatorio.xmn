@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_relatorio>
+  <relatorio 
+    id="ap_aprovado" nome="ap_aprovado" 
+    titulo="Aparelhos Aprovados Entregues" filtro="true">
+    
+    <lista_consulta>
+      <consulta
+        nome="principal"
+        titulo="Total de OS Aprovada">
+        
+        <lista_campo>
+          <campo
+            nome="osxId" 
+            titulo="O.S."
+            enlace="osxId"/>
+          <campo
+            nome="marNome" 
+            titulo="Marca"
+            enlace="marNome"/>
+          <campo
+            nome="modNome" 
+            titulo="Modelo"
+            enlace="modNome"/>
+          <campo
+            nome="osxDtAbertura" 
+            titulo="Dt. abertura"
+            enlace="DATE_FORMAT(osxDtAbertura, '%d/%m/%Y %H:%m:%i')"/>
+          <campo
+            nome="osxDtEntrega" 
+            titulo="Dt. entrega"
+            enlace="DATE_FORMAT(osxDtEntrega, '%d/%m/%Y')"/>
+          <campo
+            nome="osxValorServico" 
+            titulo="Valor do Serviço"
+            enlace="osxValorServico"/>
+          <campo
+            nome="osxCustoMaterial" 
+            titulo="Custo de Material"
+            enlace="osxCustoMaterial"/>
+
+        </lista_campo>
+        <lista_referencia>
+          <referencia nome="Os" arquetipo=""/>
+          <referencia nome="Modelo" arquetipo="INNER JOIN" chave="osxModeloAparelho = modId" />
+          <referencia nome="Marca" arquetipo="INNER JOIN" chave="modMarca=marId" />
+        </lista_referencia>
+        <lista_filtro>
+          <filtro
+            nome="mensal" titulo="Mensal" fixo="false"
+            enlace="date_format(osxDtEntrega, '%m/%Y')='?' AND osxEstado=9">
+            
+            <campo nome="mes" titulo="Mês" formato="99/9999" />
+          </filtro>
+          <filtro 
+            nome="periodo" titulo="Período" fixo="false"
+            enlace="osxDtEntrega 
+              between STR_TO_DATE('?', '%d/%m/%Y') 
+              and STR_TO_DATE('?', '%d/%m/%Y') AND osxEstado=9">
+              
+            <campo nome="inicio" titulo="Início" formato="99/99/9999" 
+              arquetipo="data"/>
+            <campo nome="final"  titulo="Final"  formato="99/99/9999" 
+              arquetipo="data"/>
+          </filtro>
+        </lista_filtro>
+      </consulta>
+    </lista_consulta>
+    <mascara>
+      <![CDATA[
+      <lista nome="principal" 
+        recipiente="divListaPrincipal" 
+        chave="osxId" 
+        class="lista"
+        ferramenta="true">
+        
+        <lista_campo>
+          <campo nome="osxId"            titulo="O.S.#"  largura="50px"/>
+          <campo nome="marNome"          titulo="Marca"  largura="90px"/>
+          <campo nome="modNome"          titulo="Modelo" largura="120px"/>
+          <campo nome="osxDtAbertura"    titulo="Dt. abertura" largura="160px"/>
+          <campo nome="osxDtEntrega"     titulo="Dt. entrega"  largura="80px"/>
+          <campo nome="osxValorServico"  titulo="Valor Serviço"  largura="80px"/>
+          <campo nome="osxCustoMaterial" titulo="Custo de Peças" largura="80px"/>
+        </lista_campo>
+        <lista_campo_calc>
+          <campo nome="qtde" 
+            titulo="Total de O.S."
+            arquetipo="num" 
+            calc="qtde++;" 
+            formato="" />
+          <campo nome="valor_total" 
+            titulo="Valor total"
+            arquetipo="num" 
+            calc="valor_total=valor_total+parseFloat($('osxValorServico', $(this)).text());" 
+            formato="R$ {0:.2f}" />
+          <campo nome="valor_total_liquido" 
+            titulo="Valor total líquido"
+            arquetipo="num" 
+            calc="valor_total_liquido=valor_total_liquido+parseFloat($('osxValorServico', $(this)).text())-parseFloat($('osxCustoMaterial', $(this)).text());" 
+            formato="R$ {0:.2f}" />
+        </lista_campo_calc>
+        <lista_ferramenta  largura="80px">
+          <ferramenta nome="imprime" enlace="osFlx.imprime(?)"/>
+        </lista_ferramenta>
+      </lista>
+      
+      <div id="divListaPrincipal"></div>
+      ]]>
+    </mascara>
+  </relatorio>
+  
+  <relatorio
+    id="ap_reprovado" nome="ap_reprovado" 
+    titulo="Aparelhos Reprovados Entregues" filtro="true">
+    
+    <lista_consulta>
+      <consulta
+        nome="principal"
+        titulo="Total de OS Reprovada">
+        
+        <lista_campo>
+          <campo
+            nome="osxId" 
+            titulo="O.S."
+            enlace="osxId"/>
+          <campo
+            nome="marNome" 
+            titulo="Marca"
+            enlace="marNome"/>
+          <campo
+            nome="modNome" 
+            titulo="Modelo"
+            enlace="modNome"/>
+          <campo
+            nome="osxDtAbertura" 
+            titulo="Dt. abertura"
+            enlace="DATE_FORMAT(osxDtAbertura, '%d/%m/%Y %H:%m:%i')"/>
+          <campo
+            nome="osxDtEntrega" 
+            titulo="Dt. entrega"
+            enlace="DATE_FORMAT(osxDtEntrega, '%d/%m/%Y')"/>
+          <campo
+            nome="osxValorServico" 
+            titulo="Valor do Serviço"
+            enlace="osxValorServico"/>
+        </lista_campo>
+        <lista_referencia>
+          <referencia nome="Os" arquetipo=""/>
+          <referencia nome="Modelo" arquetipo="INNER JOIN" chave="osxModeloAparelho = modId" />
+          <referencia nome="Marca" arquetipo="INNER JOIN" chave="modMarca=marId" />
+        </lista_referencia>
+        <lista_filtro>
+          <filtro
+            nome="mensal" titulo="Mensal" fixo="false"
+            enlace="date_format(osxDtEntrega, '%m/%Y')='?' AND osxEstado=10">
+            
+            <campo nome="mes" titulo="Mês" formato="99/9999" />
+          </filtro>
+          <filtro 
+            nome="periodo" titulo="Período" fixo="false"
+            enlace="osxDtEntrega 
+              between STR_TO_DATE('?', '%d/%m/%Y') 
+              and STR_TO_DATE('?', '%d/%m/%Y') AND osxEstado=10">
+              
+            <campo nome="inicio" titulo="Início" formato="99/99/9999" 
+              arquetipo="data"/>
+            <campo nome="final"  titulo="Final"  formato="99/99/9999" 
+              arquetipo="data"/>
+          </filtro>
+        </lista_filtro>
+      </consulta>
+    </lista_consulta>
+    <mascara>
+      <![CDATA[
+      <lista nome="principal" 
+        recipiente="divListaPrincipal" 
+        chave="osxId" 
+        class="lista"
+        ferramenta="true">
+        
+        <lista_campo>
+          <campo nome="osxId"           titulo="O.S.#"  largura="50px"/>
+          <campo nome="marNome"         titulo="Marca"  largura="90px"/>
+          <campo nome="modNome"         titulo="Modelo" largura="120px"/>
+          <campo nome="osxDtAbertura"   titulo="Dt. abertura" largura="160px"/>
+          <campo nome="osxDtEntrega"   titulo="Dt. entrega" largura="80px"/>
+          <campo nome="osxValorServico" titulo="Valor"  largura="80px"/>
+        </lista_campo>
+        <lista_campo_calc>
+          <campo nome="qtde" 
+            titulo="Total de O.S."
+            arquetipo="num" 
+            calc="qtde++;" 
+            formato="" />
+          <campo nome="valor_total" 
+            titulo="Valor total"
+            arquetipo="num" 
+            calc="valor_total=valor_total+parseFloat($('osxValorServico', $(this)).text());" 
+            formato="R$ {0:.2f}" />
+        </lista_campo_calc>
+        <lista_ferramenta largura="80px">
+          <ferramenta nome="imprime" enlace="osFlx.imprime(?)"/>
+        </lista_ferramenta>
+      </lista>
+      
+      <div id="divListaPrincipal"></div>
+      ]]>
+    </mascara>
+  </relatorio>
+</lista_relatorio>

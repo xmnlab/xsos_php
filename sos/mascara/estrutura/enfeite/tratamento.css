@@ -1,0 +1,72 @@
+h2
+{
+    font-family:verdana,Arial,sans-serif;
+    color:white;
+    background-color:#525D76;
+    font-size:16px;
+}
+
+h1
+{
+    font-family:verdana,Arial,sans-serif;
+    color:white;
+    background-color:#525D76;
+    font-size:20px;
+}
+
+h3
+{
+    font-family:verdana,Arial,sans-serif;
+    color:white;
+    background-color:#525D76;
+    font-size:14px;
+}
+
+span
+{
+    font-family:verdana,Arial,sans-serif;
+}
+
+blockquote 
+{
+    font-family:verdana,Arial,sans-serif;
+    color:#333333;
+    font-size:14px;
+}
+
+body
+{
+    font-family:Tahoma,Arial,sans-serif;
+    color:black;
+    background:#ffffff;
+} 
+
+b 
+{
+    font-family:Tahoma,Arial,sans-serif;
+    color:white;
+    background-color:#525D76;
+} 
+
+p 
+{
+    font-family:Tahoma,Arial,sans-serif;
+    background:white;
+    color:black;
+    font-size:12px;
+}
+
+a 
+{
+    color : black;
+}
+
+a.name 
+{
+    color : black;
+}
+
+hr
+{
+    color : #525D76;
+}

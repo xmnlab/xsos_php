@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class ProdutoMdl</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class ProdutoMdl</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">XSOS - Sistema de gestão Ordem de Serviço  Copyright (C) 2008  Ivan Ogassavara</p>
+<p class="description"><p>This program is free software: you can redistribute it and/or modify  it under the terms of the GNU General Public License as published by  the Free Software Foundation, either version 3 of the License, or  (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License for more details.</p><p>You should have received a copy of the GNU General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Ivan Ogassavara &lt;<a href="mailto:ivan.ogassavara@gmail.com">ivan.ogassavara@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> Release: @package_version@</li>
+				<li><span class="field">copyright:</span> Copyright (C) 2008  Ivan Ogassavara</li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses">GNU License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_modelo---ProdutoMdl.php.html">/modelo/ProdutoMdl.php</a> (line <span class="field">29</span>)
+		</p>
+		
+				
+		<pre>ModeloXmn
+   |
+   --ProdutoMdl</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																						
+				<div class="method-definition">
+											<span class="method-result">ProdutoMdl</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiCodigoBarra" title="details" class="method-name">atribuiCodigoBarra</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$codigobarra</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiDescricao" title="details" class="method-name">atribuiDescricao</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$descricao</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiFabricanteMdl" title="details" class="method-name">atribuiFabricanteMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$fabricanteMdl</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiId" title="details" class="method-name">atribuiId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiLocalizacoesMdl" title="details" class="method-name">atribuiLocalizacoesMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$localizacoesMdl</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiModelosMdl" title="details" class="method-name">atribuiModelosMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$modelosMdl</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiQtde" title="details" class="method-name">atribuiQtde</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qtde</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiQtdeMin" title="details" class="method-name">atribuiQtdeMin</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qtdemin</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiTipoProdutoMdl" title="details" class="method-name">atribuiTipoProdutoMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutoMdl</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#atribuiValor" title="details" class="method-name">atribuiValor</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$valor</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaCodigoBarra" title="details" class="method-name">pegaCodigoBarra</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaDescricao" title="details" class="method-name">pegaDescricao</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaFabricanteMdl" title="details" class="method-name">pegaFabricanteMdl</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaId" title="details" class="method-name">pegaId</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaLocalizacoesMdl" title="details" class="method-name">pegaLocalizacoesMdl</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaModelosMdl" title="details" class="method-name">pegaModelosMdl</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaQtde" title="details" class="method-name">pegaQtde</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaQtdeMin" title="details" class="method-name">pegaQtdeMin</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaTipoProdutoMdl" title="details" class="method-name">pegaTipoProdutoMdl</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pegaValor" title="details" class="method-name">pegaValor</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">42</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">ProdutoMdl</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodatribuiCodigoBarra" id="atribuiCodigoBarra"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiCodigoBarra</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiCodigoBarra
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$codigobarra</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$codigobarra</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiDescricao" id="atribuiDescricao"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiDescricao</span> (line <span class="line-number">83</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiDescricao
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$descricao</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$descricao</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiFabricanteMdl" id="atribuiFabricanteMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiFabricanteMdl</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiFabricanteMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$fabricanteMdl</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$fabricanteMdl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiId" id="atribuiId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiId</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiLocalizacoesMdl" id="atribuiLocalizacoesMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiLocalizacoesMdl</span> (line <span class="line-number">98</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiLocalizacoesMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$localizacoesMdl</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$localizacoesMdl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiModelosMdl" id="atribuiModelosMdl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiModelosMdl</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiModelosMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$modelosMdl</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$modelosMdl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiQtde" id="atribuiQtde"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiQtde</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiQtde
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qtde</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qtde</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiQtdeMin" id="atribuiQtdeMin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiQtdeMin</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiQtdeMin
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qtdemin</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qtdemin</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiTipoProdutoMdl" id="atribuiTipoProdutoMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiTipoProdutoMdl</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiTipoProdutoMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutoMdl</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoprodutoMdl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodatribuiValor" id="atribuiValor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">atribuiValor</span> (line <span class="line-number">92</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			atribuiValor
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$valor</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$valor</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpegaCodigoBarra" id="pegaCodigoBarra"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaCodigoBarra</span> (line <span class="line-number">70</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaCodigoBarra
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaDescricao" id="pegaDescricao"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaDescricao</span> (line <span class="line-number">52</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaDescricao
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaFabricanteMdl" id="pegaFabricanteMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaFabricanteMdl</span> (line <span class="line-number">76</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaFabricanteMdl
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaId" id="pegaId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaId</span> (line <span class="line-number">49</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaId
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaLocalizacoesMdl" id="pegaLocalizacoesMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaLocalizacoesMdl</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaLocalizacoesMdl
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaModelosMdl" id="pegaModelosMdl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaModelosMdl</span> (line <span class="line-number">64</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaModelosMdl
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaQtde" id="pegaQtde"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaQtde</span> (line <span class="line-number">55</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaQtde
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaQtdeMin" id="pegaQtdeMin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaQtdeMin</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaQtdeMin
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaTipoProdutoMdl" id="pegaTipoProdutoMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaTipoProdutoMdl</span> (line <span class="line-number">73</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaTipoProdutoMdl
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpegaValor" id="pegaValor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pegaValor</span> (line <span class="line-number">61</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pegaValor
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 20 Feb 2009 02:30:51 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,128 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA
+        . 'estrutura/enfeite/cliente.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/ClienteFlx.js"
+  type="text/javascript"
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<form name="frmSos" action="sos.php" method="post">
+
+<input type="hidden" name="entidade" value="cliente" />
+<input type="hidden" name="pedido" value="pesquisar" />
+<input type="hidden" name="identificador" value="" />
+
+<table cellspacing="0" cellpadding="1" border="0">
+
+<tr>
+    <td class="subTitulo" colspan="6">
+        Cadastro de Clientes
+    </td>
+</tr>
+<tr>
+    <td colspan=6>
+        &nbsp;
+    </td>
+</tr>
+<tr>
+    <td colspan=6>
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td valign="top">
+                <select name="pesquisa"
+                    onchange="document.frmSos.valPesquisa.focus();">
+                    
+                    <option value="nome">Nome</option>
+                    <option value="cpf">CPF</option>
+                    <option value="cnpj">CNPJ</option>
+                    <option value="rg">RG</option>
+                </select>
+                <input type="text" name="valPesquisa"
+                    onkeypress="return xaman.ativaEventoTeclado(event, 
+                        'clienteFlx.pesquisa(lista)', 13);"/>
+                <input type="button" value="Pesquisar" 
+                    onclick="javascript:clienteFlx.pesquisa(lista);" />
+                    
+                &nbsp;
+                &nbsp;
+                
+                <input type="button" value="+" 
+                    onClick="javascript:clienteFlx.inclui();" />
+            
+                <br />&nbsp;
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+       <div id="divLista" class="lista"></div>
+    </td>
+</tr>
+</table>
+</form>
+<script>
+var lista = null;
+
+$(document).ready(function (){
+    lista = $.parseXML( 
+            '<lista nome="principal"'
+          + ' recipiente="divLista"' 
+          + ' chave="codigo" '
+          + ' class="lista"'
+          + ' ferramenta="true">'
+          + ' <lista_campo>'
+          + ' <campo nome="nome"      titulo="Nome"     largura="250px"/>'
+          + ' <campo nome="cpf"       titulo="CPF"      largura="70px"/>'
+          + ' <campo nome="cnpj"      titulo="CNPJ"     largura="60px"/>'
+          + ' <campo nome="telefone1" titulo="Telefone 1" largura="95px"/>'
+          + ' <campo nome="telefone2" titulo="Telefone 2" largura="95px"/>'
+          + ' </lista_campo>'
+          + ' <lista_campo_calc>'
+          + ' <campo nome="qtde" titulo="Total de registros"  arquetipo="num" '
+          + '   calc="qtde++;" formato="" />'
+          + ' </lista_campo_calc>'
+          + ' <lista_ferramenta largura="100px">'
+          + ' <ferramenta nome="nova_os" enlace="clienteFlx.incluiOs(?)" />'
+          + ' <ferramenta nome="altera" enlace="clienteFlx.altera(?)" />'
+          + ' <ferramenta nome="remove" enlace="clienteFlx.remove(?, $i)" />'
+          + ' </lista_ferramenta>'
+          + ' </lista>'
+    );
+
+    lista = $(lista).find('lista');
+    artesaoXmn.criaArtefato('lista', lista);
+    
+    $('input[name="valPesquisa"]').focus();
+});
+    
+</script>

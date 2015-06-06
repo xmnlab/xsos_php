@@ -1,0 +1,452 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_br" lang="pt_br">
+    <link rel="stylesheet" type="text/css" 
+        href="<?php echo $SOS_MASCARA;?>estrutura/enfeite/impressao.css" />
+    <title>PLAZA FONE TELEFONIA LTDA.</title>
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php
+      echo $SOS_LINGUA;
+    ?>" />
+    <meta name="language" content="pt-br" />
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+
+<table width="560" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td class="subTitulo" width="50%" valign="top">
+      <table width="560" cellspacing="0" cellpadding="0" border="0">
+        <tr><td><span class="subTitulo">PLAZA FONE - </span>
+            <span style="font-weight:normal;font-size:10px;">Pra&ccedil;a Leonor Kaupa, 100 - 
+            SHOPPING PLAZA SUL Loja B1 Piso G1 - Fone 11 5073-3211</span><br/>&nbsp;
+        </td><td class="body" align="right"></td></tr>
+      </table>
+
+      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr><td class="subTitulo">
+              <b>Protocolo de Entrega - O.S.: 
+              <?php
+                        echo $osMdl->pegaId();
+?>
+              </b>
+              </td><td class="subTitulo" align="right"></td></tr></table>
+            <table>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                      <table cellspacing=0>
+                      <tr>
+                        <td>
+                        <font class="textoTitulo"><b>Atendente:</b> 
+        <?php
+                                echo $osMdl->pegaAtendenteMdl()->pegaNome();
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Cliente:</b>
+        <?php
+                                echo $osMdl->pegaClienteMdl()->pegaNome();
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>C.P.F.:</b>
+<?php
+                                echo $osMdl->pegaClienteMdl()->pegaCpf();
+?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Dt. Abertura:</b>
+<?php
+                            echo $osMdl->pegaDtAbertura()->pegaDataHora('d/m/Y');
+?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Dt. Prevista de Entrega:</b>
+<?php
+                            echo $osMdl->pegaDtEntregaPrevista()->pegaDataHora('d/m/Y');
+?>
+                        </font><br/>
+        
+
+                        <font class="textoTitulo"><b>Estado:</b>
+<?php
+                        echo $osMdl->pegaEstadoMdl()->pegaNome();
+?>
+                         <br/>
+                        </font>
+                    </td>
+                    <td>
+        
+                        <table width="100%">
+                        <tr>
+                            <td colspan=3 align="center" width="100%">
+                               <font class="textoTitulo"><b>Aparelho:</b></font>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font class="textoTitulo"><b>No. Hexadecimal:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaHexadecimal();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>No. da Linha:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaNumeroLinha();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Modelo:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaModeloMdl()->pegaNome();
+        ?>
+                                <br/>
+                                <font class="textoTitulo"><b>Marca:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaModeloMdl()->pegaMarcaMdl()->pegaNome();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Operadora:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaOperadoraMdl()->pegaNome();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Plano da Linha:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaPlanoLinha();
+        ?>
+                                </font><br/>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                      </tr>
+        
+                      </table>
+                </td>
+            </tr>
+            </table>
+            </td>
+        
+          </tr>
+          <tr>
+            <td>
+                <hr />
+                <font class="textoTitulo"><b>OBSERVA&Ccedil;&Otilde;ES DO CLIENTE:</b>
+        <?php
+                                echo $osMdl->pegaObsCliente();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="textoTitulo"><b>DESCRI&Ccedil;&Atilde;O SERVI&Ccedil;O:</b>
+        <?php
+                                echo $osMdl->pegaDescricaoServico();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="textoTitulo"><b>VALOR DO SERVI&Ccedil;O:</b>
+        <?php
+                                echo "R$ ".$osMdl->pegaValorServico();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="texto">
+                &Eacute; INDISPENS&Aacute;VEL A APRESENTA&Ccedil;&Atilde;O DESTE DOCUMENTO PARA A RETIRADA DO APARELHO.<br/>
+                A PLAZA FONE GARANTE SOMENTE O REPARO EFETUADO PELO PRAZO DE 90 DIAS.<br/>
+                EM HIP&Oacute;TESE ALGUMA, O PRAZO DE GARANTIA SER&Aacute; EXTENDIDO EM FUN&Ccedil;&Atilde;O DE UM NOVO REPARO.<br/>
+                A PLAZA FONE N&Atilde;O SE RESPONSABILIZA PELOS APARELHOS N&Atilde;O RETIRADOS NUM PRAZO DE 3 MESES.<br/>
+                O OR&Ccedil;AMENTO SER&Aacute; EFETUADO GRATUITAMENTO DENTRO DE UM PRAZO ESTABELECIDO NO ATO DA RECEP&Ccedil;&Atilde;O.<br/>
+                </font>
+            </td>
+          </tr>
+        </table>
+
+<!-- END OF CONTENTS -->
+
+<table>
+<tr>
+    <td>
+        &nbsp;
+    </td>
+    <td>
+        &nbsp;
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class="textoTitulo">
+
+        </font>
+    </td>
+    <td align="center">
+        <font class="textoTitulo">
+        -------------------------------------------------<br/>
+        Assinatura do Atendente
+        </font>
+    </td>
+</tr>
+</table>
+
+
+<p>
+
+<hr>
+<p>
+
+<table width="560" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td class="body">
+
+<!-- BEGIN OF CONTENTS -->
+    
+        <table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td class="title">
+        <b>Plaza Fone</b> - 
+              <b>O.S.: <?php echo $osMdl->pegaId();?></b>
+        </td><td class="body" align="right"></td></tr></table>
+        
+        <hr size="1" />
+        
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="body" width="50%" valign="top">
+            <table>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                      <table cellspacing=0>
+                      <tr>
+                        <td>
+                        <font class="textoTitulo"><b>Atendente:</b> 
+        <?php
+                                echo $osMdl->pegaAtendenteMdl()->pegaNome();
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Cliente:</b>
+        <?php
+                                echo $osMdl->pegaClienteMdl()->pegaNome();
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>C.P.F.:</b>
+        <?php
+                                echo $osMdl->pegaClienteMdl()->pegaCpf();
+        ?>
+                        </font><br/>
+                        
+                        <font class="textoTitulo"><b>Telefone 1:</b>
+        <?php
+                                echo $osMdl->pegaClienteMdl()->pegaFone1();
+        ?>
+                        </font><br/>
+
+                        <font class="textoTitulo"><b>Telefone 2:</b>
+        <?php
+                                echo $osMdl->pegaClienteMdl()->pegaFone2();
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Dt. Abertura:</b>
+        <?php
+                            echo $osMdl->pegaDtAbertura()->pegaDataHora('d/m/Y');
+        ?>
+                        </font><br/>
+        
+                        <font class="textoTitulo"><b>Dt. Prevista de Entrega:</b>
+        <?php
+                            echo $osMdl->pegaDtEntregaPrevista()->pegaDataHora('d/m/Y');
+        ?>
+                        </font><br/>
+
+                        <font class="textoTitulo"><b>Estado:</b>
+<?php
+                        echo $osMdl->pegaEstadoMdl()->pegaNome();
+?>
+                         <br/>
+                        </font>
+                    </td>
+                    <td>
+        
+                        <table width="100%">
+                        <tr>
+                            <td colspan=3 align="center" width="100%">
+                               <font class="textoTitulo"><b>Aparelho:</b></font>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font class="textoTitulo"><b>No. Hexadecimal:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaHexadecimal();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>No. da Linha:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaNumeroLinha();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Modelo:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaModeloMdl()->pegaNome();
+        ?>
+                                <br/>
+                                <font class="textoTitulo"><b>Marca:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaModeloMdl()->pegaMarcaMdl()->pegaNome();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Operadora:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaOperadoraMdl()->pegaNome();
+        ?>
+                                </font><br/>
+                                <font class="textoTitulo"><b>Plano da Linha:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaPlanoLinha();
+        ?>
+                                </font><br/>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                      </tr>
+        
+                      </table>
+                </td>
+            </tr>
+            </table>
+            </td>
+        
+          </tr>
+          <tr>
+            <td>
+                <hr />
+                <font class="textoTitulo"><b>OBSERVA&Ccedil;&Otilde;ES DO CLIENTE:</b>
+        <?php
+                                echo $osMdl->pegaObsCliente();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="textoTitulo"><b>OBSERVA&Ccedil;&Otilde;ES T&Eacute;CNICAS:</b>
+        <?php
+                                echo $osMdl->pegaObsTecnica();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="textoTitulo"><b>DESCRI&Ccedil;&Atilde;O DO SERVI&Ccedil;O:</b>
+        <?php
+                                echo $osMdl->pegaDescricaoServico();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+                  <tr>
+            <td>
+                <font class="textoTitulo"><b>ESTADO DO APARELHO:</b>
+        <?php
+                                echo $osMdl->pegaAparelhoMdl()->pegaEstadoAparelho();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <font class="textoTitulo"><b>VALOR DO SERVI&Ccedil;O:</b>
+        <?php
+                                echo "R$ ".$osMdl->pegaValorServico();
+        ?>
+                </font><br/>
+                <hr />
+            </td>
+          </tr>
+        </table>
+
+<!-- END OF CONTENTS -->
+
+    </td>
+  </tr>
+</table>
+
+<table>
+<tr>
+    <td>
+        &nbsp;
+    </td>
+    <td>
+        &nbsp;
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class="textoTitulo">
+
+        </font>
+    </td>
+    <td align="center">
+        <font class="textoTitulo">
+        -------------------------------------------------<br/>
+        Assinatura do Cliente
+        </font>
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

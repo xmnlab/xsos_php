@@ -1,0 +1,87 @@
+<!--
+/**
+ * Xaman - Estrutura de Desenvolvimento
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   xaman
+ * @package    xaman
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+-->
+<?php
+if (!isset($tratamentoXmn)) {
+    $tratamentoXmn = new TratamentoXmn();
+}
+
+$rota       = '';
+$modeloRota = '<p><XAMAN:Erro.chave/>: <XAMAN:Erro.descricao/></p>';
+
+foreach ($tratamentoXmn->getTrace() as $chave => $valor) {
+    $rota .= '<div style="background:#efefef;">';
+
+    foreach ($valor as $chave2 => $valor2) {
+        $erro = $modeloRota;
+        $erro = str_replace('<XAMAN:Erro.chave/>', $chave2, $erro);
+
+        if (is_array($valor2)) {
+            $x = serialize($valor2);
+            $x = str_replace(';', '<br/>'      , $x);
+            $x = str_replace('{', ' - '        , $x);
+            $x = str_replace('}', '<br/>'      , $x);
+            $x = str_replace(session_id(), str_pad('', 32, '0'), $x);
+    
+            $erro = str_replace('<XAMAN:Erro.descricao/>', $x, $erro);
+        } else {
+            $erro = str_replace('<XAMAN:Erro.descricao/>', $valor2, $erro);
+        }
+
+        $rota .= $erro;
+    }
+    $rota .= '</div><br/>';
+}
+?>
+
+<html>
+    <head>
+        <title>Xaman - Estrutura de Desenvolvimento Xaman</title>
+        <link rel="StyleSheet" 
+          href="<?php echo SosXmn::pegaAldeia('mascara');
+            ?>estrutura/xaman/tratamento/enfeite/tratamento.css" type="text/css" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />	
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />
+    </head>
+    <body style="background:#ffffff;">
+        <div id="divAtualizacao" style="position:absolute;"></div>
+        <div style="padding-left:10px;padding-right:10px;margin:0px;color:#333333;">
+            <h1>FALHA NO PROCESSO EXECUTADO</h1>
+            <hr size="1" noshade="noshade" />
+            <p><b>ENTIDADE: <?php echo @$requisicao['entidade'];?></b></p>
+            <p><b>PEDIDO: <?php echo @$requisicao['pedido'];?></b></p>
+            <p><b>MENSAGEM: <?php echo @$requisicao['pedido'];?></b></p>
+            <br/>
+            <b>ROTEIRO</b>
+            <br/>
+            <?php echo '<blockquote>' . $rota . '</blockquote>';?>
+            <hr size="1" noshade="noshade" />
+            <?php echo '<strong>XAMAN v.0.7</strong>';?>
+        </div>
+    </body>
+</html>

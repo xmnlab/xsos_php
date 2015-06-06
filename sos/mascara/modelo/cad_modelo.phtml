@@ -1,0 +1,121 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+
+<link rel="StyleSheet" href="<?php 
+        echo $SOS_MASCARA . 'estrutura/enfeite/modelo.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/ModeloFlx.js" charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<form 
+    id="frmSos"
+    name="frmSos"
+    action="sos.php" 
+    method="POST" 
+    enctype="multipart/form-data">
+    
+<input type="hidden" name="entidade" value="modelo">
+<input type="hidden" name="pedido" value="armazenar">
+
+<input type="hidden" name="identificador" 
+    value="<?if($modeloMdl->pegaId()>0) echo $modeloMdl->pegaId();?>">
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td class="subTitulo" valign="top">
+        <b>Cadastro de Modelos</b>
+    </td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+    <td>
+        <table>
+        <tr>
+            <td>
+                <font class="texto">Nome: </font>
+            </td>
+            <td>
+                <input type="text" name="nome" maxlength=15 style="width:300px;" 
+                    value="<?php echo $modeloMdl->pegaNome();?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font class="texto">Marca: </font>
+            </td>
+            <td>
+                <select name="marca" id="slcMarca"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font class="texto">Imagem: </font>
+            </td>
+            <td>
+                <div id='divFoto'></div>
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td colspan=2 align="center">
+                <input type="submit" value="Armazenar">
+                <input type="button" value="Cancelar" 
+                    onclick="javascript:modeloFlx.cancela();">
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+$(document).ready(function () {
+    modeloFlx.carregaMarca(
+        <?php echo $modeloMdl->pegaId();?>,
+        <?php echo $modeloMdl->pegaMarcaMdl()->pegaId();?>
+    );
+
+    $('#frmSos').submit(function() {
+        document.frmSos.entidade.value  = 'modelo';
+        document.frmSos.pedido.value    = 'armazenar';
+        
+        $(this).ajaxSubmit({
+            target: '#output',
+            //dataType identifies the expected content type of the server response 
+            dataType:  'xml', 
+            // success identifies the function to invoke when the server response 
+            // has been received 
+            success: function (xml) {
+                modeloFlx.armazena(xml);
+            }
+        });
+        return false;
+    }); 
+ });
+</script>

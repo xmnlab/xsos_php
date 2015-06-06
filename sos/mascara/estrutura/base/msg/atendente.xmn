@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DO ATENDENTE" 
+    objeto="nome" />
+    
+  <mensagem id="SENHA_DEVE_TER_MININO_4_CARACTERES" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="A SENHA DEVE CONTER NO M&amp;Iacute;NIMO 4 CARACTERES" 
+    objeto="senha" />
+    
+  <mensagem id="SENHA_NAO_CONFERE" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="REDIGITE A SENHA CORRETAMENTE" 
+    objeto="senha" />
+    
+  <mensagem id="INFORME_USUARIO" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DE USU&amp;Aacute;RIO DO ATENDENTE" 
+    objeto="login" />
+  
+</lista_mensagem>

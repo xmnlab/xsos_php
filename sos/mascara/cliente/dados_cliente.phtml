@@ -1,0 +1,98 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+
+<table>
+<tr>
+    <td>
+        <font class='texto'><b>Nome:</b></font>
+    </td>
+    <td>
+        <font class='texto'><?php echo $clienteMdl->pegaNome();?></font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>Endere&ccedil;o:</b></font>
+    </td>
+    <td>
+        <font class='texto'>
+            <?php echo $clienteMdl->pegaEnderecoXMdl()->pegaLogradouro();?>
+        </font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>Bairro:</b></font>
+    </td>
+    <td>
+        <font class='texto'>
+            <?php echo $clienteMdl->pegaEnderecoXMdl()->
+                pegaBairroXMdl()->pegaNome();?>
+        </font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>Cidade:</b></font>
+    </td>
+    <td>
+        <font class='texto'>
+            <?php echo $clienteMdl->pegaEnderecoXMdl()->pegaBairroXMdl()->
+                pegaCidadeXMdl()->pegaNome();?>
+        </font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>U.F.:</b></font>
+    </td>
+    <td>
+        <font class='texto'>
+            <?php echo $clienteMdl->pegaEnderecoXMdl()->pegaBairroXMdl()->
+                pegaCidadeXMdl()->pegaUfXMdl()->pegaSigla();?>
+        </font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>Telefone 1:</b></font>
+    </td>
+    <td>
+        <font class='texto'><?php echo $clienteMdl->pegaFone1();?></font>
+    </td>
+</tr>
+<tr>
+    <td>
+        <font class='texto'><b>Telefone 2:</b></font>
+    </td>
+    <td>
+        <font class='texto'><?php echo $clienteMdl->pegaFone2();?></font>
+    </td>
+</tr>
+</table>
+<br />

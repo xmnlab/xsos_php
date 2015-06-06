@@ -1,0 +1,9 @@
+XMN SOS (XMN SOT)
+Version Release: 1.8
+Date Release: April, 2013.
+Author: ivan.ogassavara@gmail.com
+New features:
+- New field "Custo de Peças"[osxCustoMaterial] in OS form;
+- New field "Custo de Peças" in the "Relatório de Entregues Realizados" report;
+- New total field (report foot) "Total Custo Mão de Obra" (Total Serviço - 
+  Total Custo Peças) in the "Relatório de Entregues Realizados" report;

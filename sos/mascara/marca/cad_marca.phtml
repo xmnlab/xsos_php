@@ -1,0 +1,86 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA
+        . 'estrutura/enfeite/marca.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/MarcaFlx.js"
+  type="text/javascript"
+  charset="<?php echo $LINGUA;?>">
+</script>
+
+
+<form id="frmSos" 
+  name="frmSos" 
+  action="javascript:marcaFlx.armazena();" 
+  method="POST">
+  
+<input type="hidden" name="entidade" value="marca">
+<input type="hidden" name="pedido" value="armazenar">
+<input type="hidden" name="identificador" 
+    value="<?if($marcaMdl->pegaId() > 0) echo $marcaMdl->pegaId();?>">
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td class="subTitulo" valign="top">
+        <b>Cadastro de Marcas</b>
+    </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td>
+        <table>
+        <tr>
+            <td>
+                <font class="texto">Nome: </font>
+            </td>
+            <td>
+                <input type="text" name="nome" maxlength=15 style="width:300px;" 
+                    value="<?php echo $marcaMdl->pegaNome();?>">
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Armazenar" onclick="javascript:marcaFlx.armazena();">
+                <input type="button" value="Cancelar" onClick="javascript:marcaFlx.cancela();">
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</form>
+<script>
+    document.frmSos.nome.focus();
+</script>

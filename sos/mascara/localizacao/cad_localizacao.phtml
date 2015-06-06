@@ -1,0 +1,83 @@
+<?php
+/*
+    XSOS - Sistema de Ordem de Serviço
+    Copyright (C) 2008  Ivan Ogassavara
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    e-mail: ivan.ogassavara@gmail.com
+*/
+	
+if (is_null($localizacaoBox)){
+	$localizacaoBox = new LocalizacaoBox();
+}
+?>
+<form action="xaman.php" method="post">
+<input type="hidden" name="entidade" value="">
+<input type="hidden" name="pedido" value="">
+<input type="hidden" name="identificador" value="<?if($localizacaoBox->getId()>0) echo $localizacaoBox->getId();?>">
+<script>
+	function gravar(){
+		document.forms[0].entidade.value="localizacao";
+		document.forms[0].pedido.value="gravar";
+		document.forms[0].submit();
+	}
+	
+	function cancelar(){
+		if(confirm('Deseja cancelar a opera��o?') == 1) {
+			document.forms[0].entidade.value="localizacao";
+			document.forms[0].pedido.value="index";
+			document.forms[0].submit();
+		}
+	}
+</script>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td class="body" valign="top">
+		<b>Cadastro de Localizações</b>
+	</td>
+	</tr>
+	<tr>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+			<tr>
+				<td>
+					<font class="text">Nome: </font>
+				</td>
+				<td>
+					<input type="text" name="nome" maxlength="30" style="width:300px;" value="<?if($localizacaoBox->getId()>0) echo $localizacaoBox->getNome();?>">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" value="Gravar" onClick="javascript:gravar();">
+					<input type="button" value="Cancelar" onClick="javascript:cancelar();">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</form>
+<hr />

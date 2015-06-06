@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DO MODELO" 
+    objeto="nome" />
+    
+  <mensagem id="INFORME_MARCA" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME A MARCA DO MODELO" 
+    objeto="marca" />
+</lista_mensagem>

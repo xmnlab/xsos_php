@@ -1,3 +1,5 @@
 .buildpath
 .project
 .idea
+sos/ritual/base/*.xmn
+local_settings.php

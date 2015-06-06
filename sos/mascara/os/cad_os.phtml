@@ -1,0 +1,303 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+
+?>
+
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA 
+        . 'estrutura/enfeite/os.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/OsFlx.js" type="text/javascript">
+</script>
+
+<form  
+  id="frmSos"
+  name="frmSos" 
+  method="POST" 
+  action="javascript:osFlx.armazena();">
+  
+<input type="hidden" name="entidade" value="os" />
+<input type="hidden" name="pedido" value="armazenar" />
+<input type="hidden" name="identificador" 
+  value="<?php echo $osMdl->pegaId();?>" />
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td class="subTitulo" valign="top">
+        Cadastro de O.S.
+    </td>
+</tr>
+<tr>
+  <td>
+    <div style="float:left;width:900px;margin-top:12px;">
+<?php
+      if ($osMdl->pegaId()) {
+        echo '<b>ID: &#35;' . $osMdl->pegaId() . '</b>';
+      }
+?>
+    </div>
+    <div class="formulario" style="float:left;width:900px;">
+      <div style="float:left;width:400px;">
+        <div class="texto" style="float:left;width:400px;">
+            Atendente:
+            <br />
+            <select name="atendente" id="slcAtendente" style="width:250px;">
+              <option></option>
+            </select>
+        </div>
+        <div class="texto" style="margin-top:2px;margin-bottom:2px;background:#efefef;
+          float:left;width:380px;">
+          <div class="texto"
+            style="float:left;width:140px;">
+                
+            Cliente:
+            <br/>
+            <input type="text" name="clientePesquisa" size="12" 
+                onkeypress="xaman.ativaEventoTeclado(event, 
+                    'osFlx.pesquisaCliente()', 13);" />
+                    
+            <a href="javascript:osFlx.pesquisaCliente();">
+                <img src="estrutura/modelo/xsos/imagem/proximo.png"
+                    border="0" style="vertical-align:bottom;"
+                    alt=""/>
+            </a>
+          </div>
+          <div class="texto" style="float:left;width:200px;">
+            <div id="divCliente" style="padding:0px;">
+                &nbsp;
+                <br/>
+                <select name="cliente" id="slcCliente" style="width:150px;">
+                  <option></option>
+                </select>
+                
+                <a href="javascript:osFlx.exibeDadosCliente();">
+                    <img src="estrutura/modelo/xsos/imagem/visualiza.png"
+                        border="0"
+                        style="vertical-align:bottom;"
+                        alt="" />
+                </a>
+                
+                <div id="divDadosCliente" style="padding:0px;"
+                    onclick="javascript:osFlx.fechaDadosCliente();">
+                </div>
+                
+            </div>
+          </div>
+        </div>
+        <div class="texto" style="float:left;width:400px;">
+          <div class="texto" style="float:left;width:140px;">
+                Dt &#47; Hr Abertura<br/>
+<?php
+                if($osMdl->pegaId() > 0) {
+                    echo '<input type="text" name="dtAbertura" value="' 
+                        . $osMdl->pegaDtAbertura()->pegaDataHora("d/m/Y H:i:s") 
+                        . '" disabled="disabled" size="16" style="color:#ffffff;"/>';
+                } else { 
+                    echo '<input name="dtAbertura" type="text" 
+                      disabled="disabled" size="12" />';
+                }
+?>
+            </div>
+            <div class="texto" style="float:left;width:120px;">
+                Dt Prev. Entrega
+                <br/>
+                <input type="text" name="dtEntregaPrevista" 
+                  maxlength="10" size="12"
+                  value="<?php 
+                        echo $osMdl->pegaDtEntregaPrevista()
+                            ->pegaDataHora('d/m/Y', '');?>" 
+                />
+            </div>
+            <div class="texto" style="float:left;width:80px;">
+                Dt de Entrega
+                <br/>
+                <input type="text" name="dtEntrega" maxlength="10" size="12" 
+                    value="<?php
+                        echo $osMdl->pegaDtEntrega()->pegaDataHora('d/m/Y', '');
+                    ?>" 
+                />
+            </div>
+          </div>
+            <div class="texto" style="float:left;width:210px;">
+                Descri&ccedil;&atilde;o do Servi&ccedil;o Executado:
+                <br/>
+                <textarea name="descricaoServico" cols="30" rows="5"
+                    style="font-size:10px;"><?php
+                    echo $osMdl->pegaDescricaoServico();?></textarea>
+            </div>
+            <div class="texto" style="float:left;width:170px;">
+              <div class="texto" style="float:left;width:170px;">
+                Andamento da O.S.
+                <br/>
+                <select name="estado" id="slcEstado" style="width:150px;"><option></option></select>
+              </div>
+              <div class="texto" style="float:left;width:170px;">
+                <div>
+                  Valor do Servi&ccedil;o:
+                  <br/>
+                  <input type="text" name="valorServico"
+                    value="<?php echo $osMdl->pegaValorServico();?>" 
+                    maxlength="10" size="12" />
+                </div>
+                <div>
+                  Custo de Pe&ccedil;as:
+                  <br/>
+                  <input type="text" name="custoMaterial"
+                    value="<?php echo $osMdl->pegaCustoMaterial();?>" 
+                    maxlength="10" size="12" />
+                </div>
+              </div>
+            </div>
+        </div>
+        <div style="float:left;width:480px;border-left:5px #efefef solid;padding-left:5px;border-right:5px #efefef solid;padding-right:5px;">
+          <div class="subTitulo" style="color:#ffffff;background:#afafaf;text-align:center;">APARELHO</div>
+          <div class="texto" style="float:left;width:480px;">
+            <div class="texto" style="float:left;width:120px;">
+                No. Hexadecimal:<br/>
+                <input type="text" name="hexadecimal" size="12"
+                    value="<?php
+                        echo $osMdl->pegaAparelhoMdl()->pegaHexadecimal();?>"
+                    maxlength="15" />
+            </div>
+            <div class="texto" style="float:left;width:120px;">
+                No. da Linha:<br/>
+                <input type="text" name="numeroLinha" size="12"
+                value="<?php 
+                    echo $osMdl->pegaAparelhoMdl()->pegaNumeroLinha();?>" 
+                    maxlength="15" />
+            </div>
+            <div class="texto" style="float:left;width:140px;">
+                Operadora:<br/>
+                <select name="operadora" id="slcOperadora" 
+                  style="width:140px;">
+                  <option></option>
+                </select>
+            </div>
+          </div>
+          <div class="texto" style="float:left;width:480px;">
+            <div class="texto" style="ftmploat:left;width:100px;">
+              Plano da Linha
+              <br/>
+              <input type="radio" name="planoLinha" value="pre" 
+<?php
+              if ($osMdl->pegaAparelhoMdl()->pegaPlanoLinha() != 'pos')
+                  echo ' checked="checked"';
+?>
+              />Pr&eacute;-pago
+              <br />
+              <input type="radio" name="planoLinha" value="pos"
+<?php
+              if ($osMdl->pegaAparelhoMdl()->pegaPlanoLinha()=="pos")
+                  echo ' checked="checked"';
+?>
+              />P&oacute;s-pago
+            </div>
+            <div class="texto" style="float:left;width:280px;">
+              <div class="texto" style="float:left;width:145px;">
+                Marca:<br/>
+                <select name="marca" id="slcMarca" style="width:140px;"
+                  onchange="osFlx.pesquisaModeloMarca();">
+                  
+                  <option></option>
+                </select>
+                
+              </div>
+              <div class="texto" style="float:left;width:130px;">
+                Modelo:
+                <div id="divModelo">
+                    <select name="modelo" id="slcModelo" 
+                      style="width:130px;">
+                      <option></option>
+                    </select>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="texto" style="float:left;width:480px;">
+            <div class="texto" style="float:left;width:160px;">
+                Obs. do Cliente
+                <br/>
+                <textarea name="obsCliente" rows="5" cols="22" 
+                  style="font-size:10px;"><?php 
+                    echo $osMdl->pegaObsCliente();?></textarea>
+            </div>
+            <div class="texto" style="float:left;width:160px;">
+                Obs. T&eacute;cnica
+                <br/>
+                <textarea name="obsTecnica" rows="5" cols="22" 
+                  style="font-size:10px;"><?php 
+                    echo $osMdl->pegaObsTecnica();?></textarea>
+            </div>
+            <div class="texto" style="float:left;width:160px;">
+                Estado do Aparelho
+                <br/>
+                <textarea name="estadoAparelho" rows="5" cols="22" 
+                  style="font-size:10px;"><?php 
+                    echo $osMdl->pegaAparelhoMdl()->pegaEstadoAparelho();
+                ?></textarea>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="texto" style="float:left;width:900px;text-align:center;padding-top:20px;">
+      <input type="button" value="Armazenar" 
+        onclick="osFlx.armazena();" />
+      <input type="button" value="Cancelar" onclick="osFlx.cancela();" />
+    </div>
+  </td>
+</tr>
+</table>
+</form>
+
+<script type="text/javascript" charset="<?php echo $SOS_LINGUA; ?>">
+
+$(document).ready(function () {
+    osFlx.inicia(
+        'cadastro', 
+        <?php echo (int) $osMdl->pegaClienteMdl()->pegaId();?>,
+        <?php echo (int) $osMdl->pegaAtendenteMdl()->pegaId();?>,
+        <?php echo (int) $osMdl->pegaEstadoMdl()->pegaId();?>,
+        <?php echo (int) $osMdl->pegaAparelhoMdl()
+            ->pegaOperadoraMdl()->pegaId();?>,
+        <?php echo (int) $osMdl->pegaAparelhoMdl()->pegaModeloMdl()
+            ->pegaMarcaMdl()->pegaId();?>,
+        <?php echo (int) $osMdl->pegaAparelhoMdl()
+                            ->pegaModeloMdl()->pegaId();?>
+    );});
+
+    $('input[name="dtEntregaPrevista"],' 
+        + 'input[name="dtEntrega"]').mask('99/99/9999');
+    $('input[name="valorServico"]').blur(function () {
+        $(this).formatCurrency({region: 'pt-BR'});});
+
+    $('input[name="valorServico"]').formatCurrency({region: 'pt-BR'});
+
+    $('input[name="custoMaterial"]').blur(function () {
+        $(this).formatCurrency({region: 'pt-BR'});});
+
+    $('input[name="custoMaterial"]').formatCurrency({region: 'pt-BR'});
+</script>

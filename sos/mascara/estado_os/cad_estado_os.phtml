@@ -1,0 +1,94 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+
+?>
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA
+        . 'estrutura/enfeite/estado_os.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/EstadoOsFlx.js"
+  type="text/javascript"
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<form 
+  id="frmSos" 
+  name="frmSos" 
+  action="javascript:estadoOsFlx.armazena();" 
+  method="post">
+  
+<input type="hidden" name="entidade" value="estado_os" />
+<input type="hidden" name="pedido" value="armazenar" />
+<input type="hidden" name="identificador" 
+    value="<?if($estadoMdl->pegaId() > 0) echo $estadoMdl->pegaId();?>" />
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td class="subTitulo" valign="top">
+        <b>Cadastro de Andamentos Ordem de Serviço</b>
+    </td>
+</tr>
+<tr>
+    <td>
+        &nbsp;
+    </td>
+</tr>
+<tr>
+    <td>
+        <table>
+        <tr>
+            <td>
+                <font class="texto">Nome: </font>
+            </td>
+            <td>
+                <input type="text" name="nome" maxlength="30" style="width:300px;" 
+                    value="<?php echo $estadoMdl->pegaNome();?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Armazenar" 
+                    onclick="javascript:estadoOsFlx.armazena();">
+                <input type="button" value="Cancelar" 
+                    onclick="javascript:estadoOsFlx.cancela();">
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</form>
+<script>
+$(document).ready(function () {
+    document.frmSos.nome.focus();
+});
+</script>

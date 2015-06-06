@@ -1,0 +1,34 @@
+<lista_panteao>
+    <panteao nome="sos.modelo">
+        <entidade nome="AparelhoMdl.php" />
+        <entidade nome="AtendenteMdl.php" />
+        <entidade nome="MarcaMdl.php" />
+        <entidade nome="ModeloMdl.php" />
+        <entidade nome="ClienteMdl.php" />
+        <entidade nome="OperadoraMdl.php" />
+        <entidade nome="OsMdl.php" />
+        <entidade nome="EstadoMdl.php" />
+    </panteao>
+    <panteao nome="sos.persistencia">
+        <entidade nome="SosPrst.php" />
+        <entidade nome="AtendentePrst.php" />
+        <entidade nome="ModeloPrst.php" />
+        <entidade nome="MarcaPrst.php" />
+        <entidade nome="ClientePrst.php" />
+        <entidade nome="OperadoraPrst.php" />
+        <entidade nome="EstadoOsPrst.php" />
+        <entidade nome="OsPrst.php" />
+        <entidade nome="RelatorioPrst.php" />
+    </panteao>
+    <panteao nome="sos.fluxo">
+        <entidade nome="SosFlx.php" />
+        <entidade nome="AtendenteFlx.php" />
+        <entidade nome="ModeloFlx.php" />
+        <entidade nome="MarcaFlx.php" />
+        <entidade nome="ClienteFlx.php" />
+        <entidade nome="OperadoraFlx.php" />
+        <entidade nome="OsFlx.php" />
+        <entidade nome="EstadoOsFlx.php" />
+        <entidade nome="RelatorioFlx.php" />
+    </panteao>
+</lista_panteao>

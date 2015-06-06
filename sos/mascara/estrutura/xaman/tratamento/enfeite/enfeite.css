@@ -1,0 +1,263 @@
+/**
+ * Xaman - Estrutura de Desenvolvimento
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   xaman
+ * @package    xaman
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+ 
+/*
+ * SUGESTAO DE CORES
+ * VERMELHO:    #931b1b;
+ * VERDE:       #8aaf43;
+ * AZUL:        #0074a3;
+ */
+
+body
+{
+    margin:         0px;
+    background:     #efefef;
+}
+
+input[type="button"].desabilitado{
+    background:     inherit;
+}
+
+a
+{
+    font-size:          12px;
+    color:              #444444;
+    text-decoration:    none;
+    font-family:        Verdana, Arial, Helvetica, sans-serif;
+}
+
+a.menu
+{
+    font-size:          10px;
+    color:              #ffffff;
+    text-decoration:    none;
+    font-family:        Verdana, Arial, Helvetica, sans-serif;
+}
+
+h1, h2
+{
+    font-family:    Verdana, Arial, Helvetica, sans-serif;
+}
+
+div.area
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+    //height:         400px;
+    margin:         7px;
+    //overflow:       scroll;
+}
+
+div.area_conteudo
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+    height:         400px;
+    margin:         7px;
+    //overflow:       scroll;
+}
+
+div.area_aviso
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #fafafa;
+    height:         30px;
+    margin:         7px;
+}
+div.barra_lateral
+{
+    float:          left;
+    width:          150px;
+    position:       fixed;
+    background:     #dfdfdf;
+    z-index:        3;
+    top:            0px;
+}
+
+div.titulo
+{
+    font-size:      12px;
+    font-weight:    bold;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #ffffff;
+    background:     #931b1b;
+    border-bottom:  2px #fafafa solid;
+    padding:         4px;
+}
+div.barra_menu {
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    padding:         2px;
+}
+
+div.cabecalho
+{
+    background:     #dfdfdf;
+    height:         100px;
+    position:       fixed;
+    width:          100%;
+}
+
+div.cabecalho_linha
+{
+    width:          60%;
+    left:           25%;
+    position:       fixed;
+    top:            100px;
+}
+div.menu_esquerda {
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    text-align:     left;
+    float:          left;
+}
+
+div.menu_direita
+{
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #fafafa;
+    background:     #999999;
+    text-align:     right;
+}
+
+div.peh {
+    font-size:      10px;
+    font-family:    verdana, Helvetica, sans-serif;
+    color:          #222222;
+    background:     #ffffff;
+}
+
+div.camadaMenu
+{
+    width:          100px;
+    left:           0;
+    z-order:        100;
+    margin-top:     10px;
+    margin-left:    10px;
+    padding:        2px;
+    top:            0px;
+}
+
+div.conteudo
+{
+    float:          left;
+}
+
+spam.titulo, font.titulo, p.titulo {
+    font-size:      30px;
+    font-weight:    bold;
+    font-family:    verdana, Helvetica, sans-serif;
+}
+
+.subtitulo {
+  font-size:        13px;
+  font-weight:      bold;
+  font-family:      Arial, Helvetica, sans-serif;
+}
+
+.descricao {
+  font-size:        12px;
+  font-style:       italic;
+  color:            #777777;
+  font-family:      Verdana, Arial, Helvetica, sans-serif;
+}
+
+.fundoclaro{
+  background-color:     #DEDEDE;
+}
+
+table.tabelaGrade
+{
+    background:         #ffffff;
+    border-collapse:    collapse;
+}
+
+tr.linha1
+{
+    background:         #fafafa;
+    border-collapse:    collapse;
+}
+tr.linha2
+{
+    background:         #dfdfdf;
+    border-collapse:    collapse;
+}
+
+td.itemTituloGrade
+{
+    font-family:        verdana;
+    font-size:          10px;
+    color:              #ffffff;
+    font-weight:        normal;
+    background:         #204e79;
+    vertical-align:     middle;
+    padding:            2px;
+}
+td.itemConteudoGrade
+{
+    padding-right:      20px;
+}
+
+td.itemGrade
+{
+    font-family:        verdana;
+    font-size:          10px;
+    color:              #004685;
+    font-weight:        normal;
+}
+
+tr.linhaGrade
+{
+    border-collapse:    collapse;
+    border:             1px #ddddff solid;
+}
+tr.linhaTituloGrade
+{
+    border-collapse:    collapse;
+    border:             1px #ddddff solid;
+}
+img
+{
+    border:             0px #ffffff solid;
+}
+
+p.apresentacao
+{
+    font-family:        sans-serif, Verdana, Arial, Helvetica;
+    font-size:          18px;
+    color:              #888888;
+    text-align:         justify;
+    
+}

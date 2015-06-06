@@ -1,0 +1,154 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA 
+        . 'estrutura/enfeite/os.css';?>" 
+    type="text/css"/>
+    
+<script src="estrutura/ferramenta/OsFlx.js" 
+    charset="<?php echo $LINGUA;?>">
+</script>
+
+<form 
+    name="frmSos"
+    action="sos.php" 
+    method="post" >
+    
+<input type="hidden" name="entidade" value="sos" />
+<input type="hidden" name="pedido" value="pesquisar" />
+<input type="hidden" name="identificador" value="" />
+
+<table width="700" cellspacing="0" cellpadding="2" border="0">
+<tr>
+    <td class="subTitulo" colspan="13" width="900">
+        Cadastro de O.S.
+    </td>
+</tr>
+<tr>
+    <td colspan="13">
+        &nbsp;
+    </td>
+    </tr>
+<tr>
+    <td colspan=13>
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td valign="top">
+                
+                <select name="pesquisa"
+                    onchange="document.frmSos.valPesquisa.focus();">
+                    
+                    <option value="os" 
+                        onclick="javascript:osFlx.habilitaValorPesquisa();">No. O.S.</option>
+                    <option value="cliente" 
+                        onclick="javascript:osFlx.habilitaValorPesquisa();">Cliente</option>
+                    <option value="hexadecimal" 
+                        onclick="javascript:osFlx.habilitaValorPesquisa();">Hexadecimal</option>
+                    <option value="marca" 
+                        onclick="javascript:osFlx.habilitaValorPesquisa();">Marca</option>
+                    <option value="modelo" 
+                        onclick="javascript:osFlx.habilitaValorPesquisa();">Modelo</option>
+<?php
+                    $estadoLstMdl->movePrimeiro();
+                    while ($estadoLstMdl->moveProximo()) {
+?>
+                        <option value="estado<?php echo 
+                            $estadoLstMdl->pegaModelo()->pegaId(); ?>"
+                            onclick="javascript:osFlx.selecionaPesquisaEstado();\">
+                            <?php echo $estadoLstMdl->pegaModelo()->pegaNome(); ?> 
+                        </option>
+<?php
+                    }
+?>
+                </select>
+                
+                <input type="text" name="valPesquisa" value=""
+                    onkeypress="return xaman.ativaEventoTeclado(event, 
+                        'osFlx.pesquisa(lista)', 13);"/>
+                
+                <input type="button" value="Pesquisar" 
+                    onclick="osFlx.pesquisa(lista);" />
+                
+                &nbsp;
+                &nbsp;
+                
+                <input type="button" value="+" 
+                    onclick="javascript:osFlx.inclui();" />
+                    
+                <br />&nbsp;
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+<tr class="linhatitulo">
+    <td>
+        <div id="divLista" class="lista"></div>
+    </td>
+</tr>
+</table>
+
+</form>
+<script type="text/javascript" charset="<?php echo $SOS_LINGUA; ?>">
+var lista;
+    $(document).ready(function () {
+         lista = $.parseXML( 
+                '<lista nome="principal"'
+              + ' recipiente="divLista"' 
+              + ' chave="codigo" '
+              + ' class="lista"'
+              + ' ferramenta="true">'
+              + ' <lista_campo>'
+              + ' <campo nome="codigo"      titulo="O.S.#"  largura="40px" />'
+              + ' <campo nome="cliente"     titulo="Nome"   largura="250px" />'
+              + ' <campo nome="estado"      titulo="Andamento"  largura="80px" />'
+              + ' <campo nome="dtAbertura"  titulo="Dt. Abert." largura="80px" />'
+              + ' <campo nome="dtEntPrevista" titulo="Dt. Entr. Prev."  largura="90px" />'
+              + ' <campo nome="dtEntrega"   titulo="Dt. Entrega"        largura="80px" />'
+              + ' <campo nome="marca"       titulo="Marca"  largura="80px" />'
+              + ' <campo nome="modelo"      titulo="Modelo" largura="100px" />'
+              + ' </lista_campo>'
+              + ' <lista_campo_calc>'
+              + ' <campo nome="qtde" titulo="Total de O.S." arquetipo="num" '
+              + '   calc="qtde++;" formato="" />'
+              + ' </lista_campo_calc>'
+              + ' <lista_ferramenta largura="90px">'
+              + ' <ferramenta nome="altera"  enlace="osFlx.altera(?)" />'
+              + ' <ferramenta nome="visualiza" enlace="osFlx.imprime(?)" />'
+              + ' <ferramenta nome="imprime" enlace="osFlx.imprime_mini(?)" />'
+              + ' </lista_ferramenta>'
+              + ' </lista>'
+        );
+
+        lista = $(lista).find('lista');
+        artesaoXmn.criaArtefato('lista', lista);
+            
+        osFlx.consulta('topo5', null, lista); 
+        document.frmSos.valPesquisa.focus();
+    });
+</script>

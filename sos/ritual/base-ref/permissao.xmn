@@ -1,0 +1,43 @@
+<permissao>
+<lista_grupo>
+    <grupo nome="publico" />
+    <grupo nome="admin" />
+</lista_grupo>
+<lista_entidade>
+    <entidade nome="atendente">
+        <grupo nome="publico" pedido="listar;consultar" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;alterar;remover" />
+    </entidade>
+    <entidade nome="cliente">
+        <grupo nome="publico" pedido="armazenar;listar;consultar;incluir;listaDados;remover;alterar" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;listaDados;remover;alterar" />
+    </entidade>
+    <entidade nome="estado_os">
+        <grupo nome="publico" pedido="listar;consultar" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;alterar;remover" />
+    </entidade>
+    <entidade nome="marca">
+        <grupo nome="publico" pedido="armazenar;listar;consultar;incluir;alterar;remover" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;alterar;remover" />
+    </entidade>
+    <entidade nome="modelo">
+        <grupo nome="publico" pedido="armazenar;listar;consultar;incluir;verificarFoto;alterar;remover;exibirFoto;removerFoto" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;verificarFoto;alterar;remover;exibirFoto;removerFoto" />
+    </entidade>
+    <entidade nome="operadora">
+        <grupo nome="publico" pedido="armazenar;listar;consultar;incluir;remover;alterar" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;remover;alterar" />
+    </entidade>
+    <entidade nome="os">
+        <grupo nome="publico" pedido="armazenar;listar;consultar;incluir;alterar;imprimir;incluirParaNovoCliente" />
+        <grupo nome="admin" pedido="armazenar;listar;consultar;incluir;alterar;imprimir;incluirParaNovoCliente" />
+    </entidade>
+    <entidade nome="relatorio">
+        <grupo nome="admin" pedido="armazenar;listar;consultar;listar_tabela;listar_campo;listar_relatorio;relatorio;carga_abertura" />
+    </entidade>
+    <entidade nome="menu">
+        <grupo nome="publico" pedido="listar_menu" />
+        <grupo nome="admin" pedido="listar_menu" />
+    </entidade>
+</lista_entidade>
+</permissao>

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class TipoProdutoPrst</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class TipoProdutoPrst</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">XSOS - Sistema de gestão Ordem de Serviço  Copyright (C) 2008  Ivan Ogassavara</p>
+<p class="description"><p>This program is free software: you can redistribute it and/or modify  it under the terms of the GNU General Public License as published by  the Free Software Foundation, either version 3 of the License, or  (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU General Public License for more details.</p><p>You should have received a copy of the GNU General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Ivan Ogassavara &lt;<a href="mailto:ivan.ogassavara@gmail.com">ivan.ogassavara@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> Release: @package_version@</li>
+				<li><span class="field">copyright:</span> Copyright (C) 2008  Ivan Ogassavara</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_persistencia---TipoProdutoPrst.php.html">/persistencia/TipoProdutoPrst.php</a> (line <span class="field">31</span>)
+		</p>
+		
+				
+		<pre>PersistenciaXmn
+   |
+   --<a href="../../sos/sos-persistencia/SosPrst.html">SosPrst</a>
+      |
+      --TipoProdutoPrst</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DELETE_TIPOPRODUTOS_CODIGO" title="details" class="const-name">DELETE_TIPOPRODUTOS_CODIGO</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GRAVACAO_TIPOPRODUTO" title="details" class="const-name">GRAVACAO_TIPOPRODUTO</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_TIPOPRODUTOS" title="details" class="const-name">PESQUISA_TIPOPRODUTOS</a> = 					<span class="var-type"> 101</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PESQUISA_TIPOPRODUTO_CODIGO" title="details" class="const-name">PESQUISA_TIPOPRODUTO_CODIGO</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																										
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#preparePrst" title="details" class="method-name">preparePrst</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#start" title="details" class="method-name">start</a>
+										()
+									</div>
+																		
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#alterarTipoProdutoMdl" title="details" class="method-name">alterarTipoProdutoMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#carregaMdl" title="details" class="method-name">carregaMdl</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#excluirTipoProdutoMdl" title="details" class="method-name">excluirTipoProdutoMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMdl" title="details" class="method-name">getMdl</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGet</span> = <span class="var-default">TipoProdutoPrst::PESQUISA_TIPOPRODUTO_CODIGO</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getVectorMdl" title="details" class="method-name">getVectorMdl</a>
+											(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoLstMdl.html">TipoProdutoLstMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoLstMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGet</span> = <span class="var-default">TipoProdutoPrst::PESQUISA_TIPOPRODUTOS</span>], [<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span> = <span class="var-default">null</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#incluirTipoProdutoMdl" title="details" class="method-name">incluirTipoProdutoMdl</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+									</div>
+																											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodpreparePrst" id="preparePrst"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static preparePrst</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			preparePrst
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodstart" id="start"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static start</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			start
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodalterarTipoProdutoMdl" id="alterarTipoProdutoMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">alterarTipoProdutoMdl</span> (line <span class="line-number">99</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			alterarTipoProdutoMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoprodutobox</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcarregaMdl" id="carregaMdl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">carregaMdl</span> (line <span class="line-number">57</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			carregaMdl
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>
+				<span class="var-name">$tipoProdutoMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexcluirTipoProdutoMdl" id="excluirTipoProdutoMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">excluirTipoProdutoMdl</span> (line <span class="line-number">121</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			excluirTipoProdutoMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoprodutobox</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMdl" id="getMdl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMdl</span> (line <span class="line-number">72</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMdl
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGet</span> = <span class="var-default">TipoProdutoPrst::PESQUISA_TIPOPRODUTO_CODIGO</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>
+				<span class="var-name">$tipoProdutoMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoGet</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetVectorMdl" id="getVectorMdl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getVectorMdl</span> (line <span class="line-number">68</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getVectorMdl
+		</span>
+					(<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoLstMdl.html">TipoProdutoLstMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoLstMdl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tipoGet</span> = <span class="var-default">TipoProdutoPrst::PESQUISA_TIPOPRODUTOS</span>], [<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>&nbsp;<span class="var-name">$tipoProdutoMdl</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoLstMdl.html">TipoProdutoLstMdl</a></span>
+				<span class="var-name">$tipoProdutoLstMdl</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoGet</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../sos/sos-modelo/TipoProdutoMdl.html">TipoProdutoMdl</a></span>
+				<span class="var-name">$tipoProdutoMdl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodincluirTipoProdutoMdl" id="incluirTipoProdutoMdl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">incluirTipoProdutoMdl</span> (line <span class="line-number">76</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			incluirTipoProdutoMdl
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tipoprodutobox</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tipoprodutobox</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../sos/sos-persistencia/SosPrst.html">SosPrst</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../sos/sos-persistencia/SosPrst.html#methodinicia">SosPrst::inicia()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDELETE_TIPOPRODUTOS_CODIGO" id="DELETE_TIPOPRODUTOS_CODIGO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DELETE_TIPOPRODUTOS_CODIGO</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGRAVACAO_TIPOPRODUTO" id="GRAVACAO_TIPOPRODUTO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GRAVACAO_TIPOPRODUTO</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_TIPOPRODUTOS" id="PESQUISA_TIPOPRODUTOS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_TIPOPRODUTOS</span>
+			 = <span class="const-default"> 101</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPESQUISA_TIPOPRODUTO_CODIGO" id="PESQUISA_TIPOPRODUTO_CODIGO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PESQUISA_TIPOPRODUTO_CODIGO</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 20 Feb 2009 02:30:51 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

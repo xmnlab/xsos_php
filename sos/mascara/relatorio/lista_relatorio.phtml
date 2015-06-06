@@ -1,0 +1,98 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+?>
+<link rel="StyleSheet" href="<?php echo $SOS_MASCARA
+        . 'estrutura/enfeite/relatorio.css';?>" 
+    type="text/css"/>
+    
+<script type="text/javascript"
+  src="estrutura/ferramenta/RelatorioFlx.js" 
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<script type="text/javascript"
+  src="estrutura/ferramenta/OsFlx.js" 
+  charset="<?php echo $SOS_LINGUA;?>">
+</script>
+
+<div class="subTitulo">
+    Relat&oacute;rio:
+    <select name="relatorio" 
+      id="slcRelatorio" 
+      style="border:1px #efefef solid;"
+      onchange="relatorioFlx.consulta('relatorio');">
+      
+      <option></option>
+    </select>
+    <input type="button" value="imprimir" 
+      onclick="$('#relConteudo').printElement();"/>
+      
+    <input type="button" value="+" 
+      onclick="relatorioFlx.carrega('carga', 'abertura');"/>
+</div>
+<div>
+  <br /> 
+</div>
+<div id="relatorio"
+  style="float:left;width:80%;
+    border:5px solid #dfdfdf;
+    background: #f5f5f5;
+    margin:5px;visibility:hidden;">
+    
+    <div class="subTitulo">
+      <span id="relNome"></span>
+      <br />&nbsp;
+    </div>
+    <div id="capaFiltro" style="visibility:hidden;">
+      <form id="frmSos" action="javascript:relatorioFlx.consulta('consultar');">
+        <table>
+        <tr>
+          <td>
+            <b>Filtro</b>&nbsp;
+            <select id="filtro" 
+              onchange="relatorioFlx.consulta('filtro');"><option></option></select>
+          </td>
+          <td id="colValores" style="">
+          </td>
+          <td id="colBotao" style="visibility:hidden">
+            <input type="button" value="consultar" onclick="relatorioFlx.consulta('consultar');"/>
+          </td>
+        </tr>
+        </table>
+      </form>
+    </div>
+    <div>
+      <br /> 
+    </div>
+    <div id="relConteudo" >
+      
+    </div>
+</div>
+
+<script type="text/javascript" charset="<?php echo $SOS_LINGUA; ?>">
+$(document).ready(function () {relatorioFlx.consulta('lista_relatorio');});
+</script>

@@ -1,0 +1,62 @@
+<?php
+/**
+ * XSOS - Sistema de gestão Ordem de Serviço
+ * Copyright (C) 2008  Ivan Ogassavara  
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license    http://www.gnu.org/licenses    GNU License
+ * @copyright  Copyright (C) 2008  Ivan Ogassavara
+ * @category   mascara
+ * @package    sos
+ * @subpackage sos.mascara
+ * @version    Release: @package_version@
+ * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
+ */
+    
+    if(@$direcaoXMdl->sessao['login'] != true) {
+        return;
+    }
+ ?>
+
+<div style="position:absolute;">
+    <form name="frmMenu" id="frmMenu" action="sos.php">
+        <input type="hidden" name="entidade" value="sos" />
+        <input type="hidden" name="pedido" value="pesquisar" />
+        <input type="hidden" name="identificador" value="" />
+    </form>
+</div>
+
+<script src="estrutura/ferramenta/MenuFlx.js" 
+  type="text/javascript">
+</script>
+<span id="menu">
+<script type="text/javascript">
+
+var menu = new Array();
+
+menu = menuFlx.retornaMenu();
+for (item in menu[0])
+{
+    if (menu[0][item]['nome'] != undefined) {
+        document.write(
+            '<a href="sos.php?' 
+            + menu[0][item]['chamada'] + '" class="menu_item">'
+            + menu[0][item]['descricao']
+            + '</a>&nbsp;&#124;&nbsp;'
+        );
+    }
+}
+</script>
+</span>

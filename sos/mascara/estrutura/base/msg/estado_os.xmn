@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lista_mensagem>
+  <mensagem id="INFORME_NOME" 
+    titulo="INCONCIST&amp;Ecirc;NCIA"
+    texto="INFORME O NOME DO ESTADO / ANDAMENTO DA O.S." 
+    objeto="nome" />
+</lista_mensagem>

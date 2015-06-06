@@ -1,0 +1,39 @@
+<origem 
+  xaman="SosXmn" 
+  raiz="SOS"
+  aldeia="entidade"
+  caminho="/var/www/xsos/sos/entidade/" >
+  
+  <atributo 
+    nome="MASCARA" 
+    aldeia="mascara"
+    caminho="/" />
+    
+  <atributo 
+    nome="MASCARA_REAL"
+    aldeia="mascara_real"
+    caminho="/var/www/xsos/sos/mascara/" />
+    
+  <atributo 
+    nome="RITUAL"
+    aldeia="ritual"
+    caminho="/var/www/xsos/sos/ritual/" />
+    
+  <atributo 
+    nome="ARTEFATO"
+    aldeia="artefato"
+    caminho="/var/www/xsos/sos/artefato/" />
+    
+  <atributo 
+    nome="LINGUA"
+    valor="utf-8" />
+    
+  <panteao invoca="xaman.modelo.comum" />
+  <panteao invoca="xaman.artefato" />
+  <panteao invoca="xaman.modelo.artefato" />
+  <panteao invoca="xaman.panteao.arte" />
+  <panteao invoca="xaman.externo" />
+  <panteao invoca="sos.modelo" />
+  <panteao invoca="sos.persistencia" />
+  <panteao invoca="sos.fluxo" />
+</origem>
