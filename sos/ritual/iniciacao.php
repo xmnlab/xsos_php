@@ -27,16 +27,8 @@
 
 session_start();
 
-$PRINT_SERVER = 'http://localhost/os/print.php';
-$PRINT_DEVICE = '/dev/ttyUSB0';
-
-if (file_exists ('./local_settings.php')) {
-    import('./local_settings.php');
-}
-
 #error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED);
-ini_set("display_errors", 1); 
 
 static $XAMAN_PACHAMAMA    = '/var/www/xaman/xmn/';
 

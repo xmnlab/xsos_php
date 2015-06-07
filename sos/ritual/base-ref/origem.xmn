@@ -27,6 +27,26 @@
   <atributo 
     nome="LINGUA"
     valor="utf-8" />
+
+  <atributo
+    nome="PRINT_SERVER"
+    valor="http://localhost/os/print.php" />
+
+  <atributo
+    nome="PRINT_DEVICE"
+    valor="/tmp/ttyUSB0" />
+
+  <atributo
+    nome="SITE_TITLE"
+    valor="XSOS" />
+
+  <atributo
+    nome="SITE_ENTERPRISE_NAME"
+    valor="XSOS" />
+
+  <atributo
+    nome="SITE_LOCATION"
+    valor="EARTH" />
     
   <panteao invoca="xaman.modelo.comum" />
   <panteao invoca="xaman.artefato" />

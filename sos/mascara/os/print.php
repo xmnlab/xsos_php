@@ -24,6 +24,10 @@
  * @version    Release: @package_version@
  * @author     Ivan Ogassavara <ivan.ogassavara@gmail.com>
  */
+error_reporting(E_ALL);
 
-# exec('echo "' + $POST['text'] + '" > /dev/ttyUSB0');
-exec('echo "' + $POST['text'] + '" > /dev/ttyUSB0');
+$cmd = 'touch ' . $_POST['device'];
+exec($cmd);
+
+$cmd = 'echo "' . $_POST['text'] . '" > ' . $_POST['device'];
+exec($cmd);

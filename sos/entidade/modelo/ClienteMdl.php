@@ -28,6 +28,7 @@
 class ClienteMdl extends ModeloXmn
 {
     private $nome              = '';
+    private $email             = '';
     private $cnpj              = '';
     private $cpf               = '';
     private $rg                = '';
@@ -77,6 +78,10 @@ class ClienteMdl extends ModeloXmn
     {
         return $this->cep;
     }
+    public function pegaEmail()
+    {
+        return $this->email;
+    }
     public function pegaFone1()
     {
         return $this->fone1;
@@ -109,6 +114,10 @@ class ClienteMdl extends ModeloXmn
     public function atribuiCep($cep)
     {
         $this->cep = $cep;
+    }
+    public function atribuiEmail($email)
+    {
+        $this->email = $email;
     }
     public function atribuiFone1($fone1)
     {
