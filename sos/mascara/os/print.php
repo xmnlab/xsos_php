@@ -26,8 +26,8 @@
  */
 error_reporting(E_ALL);
 
-$cmd = 'touch ' . $_POST['device'];
-exec($cmd);
+#$cmd = 'touch ' . $_REQUEST['device'];
+#exec($cmd);
 
-$cmd = 'echo "' . $_POST['text'] . '" > ' . $_POST['device'];
+$cmd = 'echo "' . $_REQUEST['text'] . '" > ' . $_REQUEST['device'];
 exec($cmd);
