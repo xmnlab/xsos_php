@@ -29,5 +29,8 @@ error_reporting(E_ALL);
 #$cmd = 'touch ' . $_REQUEST['device'];
 #exec($cmd);
 
+# change printer speed
+exec('stty -F ' . $_REQUEST['device'] . ' speed 115200')
+
 $cmd = 'echo "' . $_REQUEST['text'] . '" > ' . $_REQUEST['device'];
 exec($cmd);

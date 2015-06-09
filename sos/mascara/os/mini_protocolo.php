@@ -50,7 +50,7 @@ $text = str_replace('{{ cli_email }}', $osMdl->pegaClienteMdl()->pegaEmail(), $t
 $text = str_replace('{{ tec_obs }}', $osMdl->pegaObsTecnica(), $text);
 $text = str_replace('{{ ap_estado }}', $osMdl->pegaAparelhoMdl()->pegaEstadoAparelho(), $text);
 
-$text = iconv('UTF-8', 'ISO-8859-1', $text);
+# $text = iconv('UTF-8', 'ISO-8859-1', $text);
 
 $fields = array('text' => $text, 'device' => $SOS_PRINT_DEVICE);
 $url = $SOS_PRINT_SERVER;
